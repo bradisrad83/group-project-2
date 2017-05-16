@@ -1,0 +1,28 @@
+{
+  "name": "group-project-2",
+  "version": "1.0.0",
+  "description": "UCF Coding Bootcamp group project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradisrad83/group-project-2.git"
+  },
+  "author": "Brad Goldmsith, Jason O'Brien, Jose Velez, Willis Dorden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradisrad83/group-project-2/issues"
+  },
+  "homepage": "https://github.com/bradisrad83/group-project-2#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.8",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4"
+  }
+}
