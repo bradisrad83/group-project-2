@@ -3,7 +3,7 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Account = sequelize.define("Account", {
-        // Giving the Author model a name of type STRING
+        // Giving the Account model a name of type STRING
         Username: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -66,11 +66,11 @@ module.exports = function(sequelize, DataTypes) {
         // Here we'll pass a second "classMethods" object into the define method
         // This is for any additional configuration we want to give our models
 
-        // We're saying that we want our Author to have Posts
+        // We're saying that we want our Account to have Posts
         classMethods: {
             associate: function (models) {
-                // Associating Author with Posts
-                // When an Author is deleted, also delete any associated Posts
+                // Associating Account  with profile
+                // When an Account is deleted, also delete any associated profile
                 Account.hasMany(models.Profile, {
                     onDelete: "cascade"
                 });
