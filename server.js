@@ -24,6 +24,8 @@ app.engine("handlebars", exphbs({
 
 app.set("view engine", "handlebars");
 
+require("./controller/profile.js")(app)
+
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log(`App running on port: ${PORT}`);
