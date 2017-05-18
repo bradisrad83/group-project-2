@@ -1,6 +1,6 @@
 // username, firstname, lastname, location, zipcode, bio, img-links,
 
-module.exports = function(sequelize, DataTypes) {
+odule.exports = function(sequelize, DataTypes) {
     var Profile = sequelize.define("Profile", {
             Username: {
                 type: DataTypes.STRING,
