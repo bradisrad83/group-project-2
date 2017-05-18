@@ -67,11 +67,11 @@ module.exports = function(sequelize, DataTypes) {
         // This is for any additional configuration we want to give our models
 
         // We're saying that we want our Account to have Posts
-      /*  classMethods: {
+        /*classMethods: {
             associate: function (models) {
                 // Associating Account  with profile
                 // When an Account is deleted, also delete any associated profile
-                Account.hasMany(models.Profile, {
+                Account.hasOne(models.Profile, {
                     onDelete: "cascade"
                 });
 

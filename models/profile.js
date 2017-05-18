@@ -60,7 +60,7 @@ module.exports = function(sequelize, DataTypes) {
 
 
             // We're saying that we want our Author to have Posts
-            /*classMethods: {
+            classMethods: {
                 associate: function(models) {
                     // An Author (foreignKey) is required or a Post can't be made
                     Profile.belongsTo(models.Account, {
@@ -69,7 +69,7 @@ module.exports = function(sequelize, DataTypes) {
                         }
                     });
                 }
-            }*/
+            }
         }
     );
     return Profile;
