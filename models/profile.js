@@ -55,9 +55,9 @@ module.exports = function(sequelize, DataTypes) {
                 validate:{
                     isUrl: true //will make sure it is a link
                 }
-            },
-
-
+            }
+          },
+          {
 
             // We're saying that we want our Author to have Posts
             classMethods: {
@@ -70,6 +70,7 @@ module.exports = function(sequelize, DataTypes) {
                     });
                 }
             }
+
         }
     );
     return Profile;
