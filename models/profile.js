@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull: false,
                 validate: {
                     len: [1, 20],
-                    isUppercase: true,
+                    
                     isLowercase: true,
                     notEmpty: true
                 }
@@ -62,7 +62,7 @@ module.exports = function(sequelize, DataTypes) {
               associate: function(models){
                 Profile.hasMany(models.Match,{
                   foreignKey:{
-                    allowNull: false
+                    allowNull: true
                   }
                 });
               }
