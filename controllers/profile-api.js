@@ -7,7 +7,7 @@ module.exports = function(app){
       res.json(dbProfile);
     });
   });
-
+  // Route to post the new profile to the table
   app.post("/api/profile", function(req, res){
     db.Profile.create({
       Username: req.body.Username,
@@ -19,6 +19,7 @@ module.exports = function(app){
       imgLink: req.body.imgLink
     }).then(function(dbProfile){
       res.json(dbProfile);
+    // Catch the error and display it on the console 
     }).catch(error => {
       console.log(error);
       res.status(500).json(error);
