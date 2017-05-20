@@ -61,7 +61,9 @@ module.exports = function(sequelize, DataTypes) {
                         });
                 }
             }
-        },
+        }
+      },
+      {
 
         // Here we'll pass a second "classMethods" object into the define method
         // This is for any additional configuration we want to give our models
@@ -71,7 +73,7 @@ module.exports = function(sequelize, DataTypes) {
             associate: function (models) {
                 // Associating Account  with profile
                 // When an Account is deleted, also delete any associated profile
-                Account.hasMany(models.Profile, {
+                Account.hasOne(models.Profile, {
                     onDelete: "cascade"
                 });
 
