@@ -2,16 +2,6 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Profile = sequelize.define("Profile", {
-            Username: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                validate: {
-                    len: [1, 20],
-                    
-                    isLowercase: true,
-                    notEmpty: true
-                }
-            },
             firstName: {
                 type: DataTypes.STRING,
                 allowNull: false,
