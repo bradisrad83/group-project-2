@@ -5,45 +5,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Matchstick</title>
 
-	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 <body>
+  <div id="signInIcon" class="clickLog"><i class ="fa fa-sign-in fa-4x" aria-hidden="true"></i></div>
 
 	<div class="container">
-    <img id="logoLog" class="clickLog" src="assets/img/logo-placeholder.png" />
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <img id="logoLog" class="clickLog img-responsive" src="assets/img/matchstick-logo.png" alt="Matchstick Logo" />
+      </div>
+    </div>
     <h1 id="tagline" class="clickLog text-center" >Ignite a new relationship!</h1>
 	</div>
 
   <!-- Modal -->
-  <div id="logInModal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="LogInModalLabel" aria-hidden="true">
+  <div id="logInModal" class="modal fade"  tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <!--title including the id of the current article-->
-                  <h4 class="modal-title" id=""><b>Log in to MatchStick</b></h4>
-                  <!--where notes will be displayed-->
-
               </div>
               <div class="modal-body">
                   <div class="form-group">
                     <form id="loginform" name="loginform" method="post" action="index.html">
-                      <label for="username">Username:</label>
-                      <input type="text" name="username" id="username" class="txtfield" tabindex="1">
-
-                      <label for="password">Password:</label>
-                      <input type="password" name="password" id="password" class="txtfield" tabindex="2">
+                      <!--<label for="username"><h2>Username:</h2></label> -->
+                      <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                          <input type="text" name="username" id="username" class="txtfield text-center" tabindex="1" placeholder="Username">
+                        </div>
+                      </div>
+                      <!--<label for="password"><h2>Password:</h2></label> -->
+                      <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                          <input type="password" name="password" id="password" class="txtfield text-center" tabindex="2" placeholder="Password">
+                        </div>
+                      </div>
                     </form>
                   </div>
-                  <div><!--enter saved notes here--></div>
               </div>
               <div class="modal-footer">
-                  <button type="button" id="registerbtn" class="registerbtn btn btn-secondary" data-dismiss="modal">Register</button>
-                  <button type="button" id="loginbtn" class="loginbtn btn btn-secondary" data-dismiss="modal">Log In</button>
+                  <button type="button" id="registerbtn" class="registerbtn btn-lg btn-secondary" data-dismiss="modal">Register</button>
+                  <button type="button" id="loginbtn" class="loginbtn btn-lg btn-secondary" data-dismiss="modal">Log In</button>
               </div>
           </div>
       </div>

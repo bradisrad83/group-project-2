@@ -1,7 +1,91 @@
+body {
+    background-image: url(../img/matchstick-background.jpg);
+    background-size: cover;
+    background-position: top;
+    font-family: 'Asap', sans-serif;
+}
+
+#signInIcon {
+  color: #ea8737;
+  position: fixed;
+  right: 2em;
+  top: 2em;
+}
+
 #logoLog {
     display: block;
     vertical-align: middle;
     margin-top: 20%;
     margin-left: auto;
     margin-right: auto;
+ }
+
+ #tagline {
+    color: #fff;
+    text-shadow: 2px 2px #6b7a87;
+    font-size: 330%;
+ }
+
+ .modal-header  {
+   background-image: url(../img/matchstick-modal-header.jpg);
+   background-size: 70%;
+   background-position: left;
+   background-repeat: no-repeat;
+   background-color: #dcc7aa;
+   color: #6b7a87;
+   border-top: 2px solid #ea8737;
+   border-right: 2px solid #ea8737;
+   border-left: 2px solid #ea8737;
+   height: 80px;
+ }
+
+ .modal-footer {
+   background-image: url(../img/matchstick-modal-footer.jpg);
+   background-size: 70%;
+   background-position: left;
+   background-repeat: no-repeat;
+   background-color: #dcc7aa;
+   color: #6b7a87;
+   border-bottom: : 2px solid #ea8737;
+   border-right: 2px solid #ea8737;
+   border-left: 2px solid #ea8737;
+ }
+
+
+ .modal-body {
+   background-image: url(../img/matchstick-modal-background.jpg);
+   background-size: cover;
+   background-position: center;
+   background-color: #6b7a87;
+   border-right: 2px solid #ea8737;
+   border-left: 2px solid #ea8737;
+   color: #fff;
+   padding: 6em 0;
+
+ }
+
+ .txtfield {
+   margin-top: 20px;
+   width: 100%;
+   font-size: 200%;
+   color: #6b7a87;
+   border-radius: 10px;
+ }
+
+ ::-webkit-input-placeholder {
+   color: #d3d3d3;
+ }
+
+ #registerbtn {
+   background-color: #f7c331;
+   border-color: #f7c331;
+   color: #fff;
+   margin-right: 1em;
+ }
+
+ #loginbtn {
+   background-color: #ea8737;
+   border-color: #ea8737;
+   color: #fff;
+   margin-right: 1em;
  }
