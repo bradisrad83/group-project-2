@@ -56,6 +56,17 @@ module.exports = function(sequelize, DataTypes) {
                     isUrl: true //will make sure it is a link
                 }
             }
+          },
+          {
+            classMethods:{
+              associate: function(models){
+                Profile.hasMany(models.Match,{
+                  foreignKey:{
+                    allowNull: false
+                  }
+                });
+              }
+            }
           }
     );
     return Profile;
