@@ -15,10 +15,31 @@ $(document).ready(function() {
   });
 
   $('#registerbtn').click( function() {
-  $.post( '/api/account', $('registerForm').serialize(), function(data) {
+    var rName = $('#reg-username').val().trim();
+    var rEmail = $('#reg-email').val().trim();
+    var rPassword =$('#reg-password').val().trim();
+
+    var registerObj = {
+      username: rName,
+      email: rEmail,
+      password: rPassword
+    };
+    $.ajax({
+      type: 'POST',
+      url: 'api/account',
+      data: registerObj,
+      success: function(result){
+        console.log(result);
+      }
+    });
+
+
+
+  //$.post( '/api/account', $('registerForm').serialize(), function(data) {
+      //console.log(data);
       // do something with data?
       // currently its saying "POST http://localhost:8080/api/account 404 (Not Found)"
-    });
+    //});
   });
 
 });
