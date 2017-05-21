@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var mysql = require("mysql");
 var methodOverride = require("method-override");
 var sequelize = require("sequelize");
+var bcrypt = require('bcrypt');
 
 var db = require("./models");
 
@@ -15,6 +16,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+app.use(bodyParser.json());
 
 app.use(methodOverride("_method"));
 
@@ -24,9 +26,9 @@ app.engine("handlebars", exphbs({
 
 app.set("view engine", "handlebars");
 
-//require("./controller/profile.js")(app)
+require("./controllers/account-api.js")(app);
 
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force:true}).then(function() {
   app.listen(PORT, function() {
     console.log(`App running on port: ${PORT}`);
   });
