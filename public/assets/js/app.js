@@ -18,20 +18,46 @@ $(document).ready(function() {
     var rName = $('#reg-username').val().trim();
     var rEmail = $('#reg-email').val().trim();
     var rPassword =$('#reg-password').val().trim();
+    var confirmPass =$('#confirm-password').val().trim();
 
     var registerObj = {
       username: rName,
       email: rEmail,
       password: rPassword
     };
-    $.ajax({
-      type: 'POST',
-      url: 'api/account',
-      data: registerObj,
-      success: function(result){
-        console.log(result);
-      }
-    });
+    if (confirmPass !== rPassword) {
+      //bootbox.confirm("<h3 class='text-center m-top-90'> Sorry, your passwords don't match.<br/>Please try again.</h3>");
+      //$('#registerModal').modal('show');
+      bootbox.confirm({
+        message: "<h3 class='text-center m-top-80'> Sorry, your passwords don't match.<br/>Please try again.</h3>",
+        buttons: {
+          confirm: {
+            label: 'Yes',
+            className: 'btn-success'
+          },
+          cancel: {
+              label: 'No',
+              className: 'btn-danger',
+              callback: function() {
+                $('#registerModal').modal('hide');
+              }
+          }
+        },
+        callback: function (result) {
+          console.log(result);
+        }
+      });
+    } else {
+      $.ajax({
+        type: 'POST',
+        url: 'api/account',
+        data: registerObj,
+        success: function(result){
+          console.log(result);
+        }
+      });
+    }
+
 
 
 
