@@ -1,3 +1,7 @@
 node_modules
 .idea
 DS_Store
+
+#since we all have different passwords ignoring from here will
+#keep us having to retype each time.
+config.json
