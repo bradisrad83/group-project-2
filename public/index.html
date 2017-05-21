@@ -35,16 +35,14 @@
               <div class="modal-body">
                   <div class="form-group">
                     <form id="loginForm" name="loginForm" method="get" action="index.html">
-                      <!--<label for="username"><h2>Username:</h2></label> -->
                       <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                          <input type="text" name="username" id="username" class="txtfield text-center" tabindex="1" placeholder="Username">
+                          <input type="text" name="username" id="log-username" class="txtfield text-center" tabindex="1" placeholder="Username">
                         </div>
                       </div>
-                      <!--<label for="password"><h2>Password:</h2></label> -->
                       <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                          <input type="password" name="password" id="password" class="txtfield text-center" tabindex="2" placeholder="Password">
+                          <input type="password" name="password" id="log-password" class="txtfield text-center" tabindex="2" placeholder="Password">
                         </div>
                       </div>
                     </form>
@@ -66,26 +64,25 @@
 							</div>
 							<div class="modal-body">
 									<div class="form-group">
-										<form id="registerForm" name="registerForm" method="post" action="index.html">
-											<!--<label for="username"><h2>Username:</h2></label> -->
+										<form id="registerForm" name="registerForm" method="POST" action="/api/account">
 											<div class="row">
 												<div class="col-md-8 col-md-offset-2">
-													<input type="text" name="username" id="username" class="txtfield text-center" tabindex="1" placeholder="Username">
+													<input type="text" name="username" id="reg-username" class="txtfield text-center" tabindex="1" placeholder="Username">
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-8 col-md-offset-2">
-													<input type="email" name="email" id="email" class="txtfield text-center" tabindex="2" placeholder="Email">
+													<input type="email" name="email" id="reg-email" class="txtfield text-center" tabindex="2" placeholder="Email">
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-8 col-md-offset-2">
-													<input type="password" name="password" id="password" class="txtfield text-center" tabindex="2" placeholder="Password">
+													<input type="password" name="password" id="reg-password" class="txtfield text-center" tabindex="2" placeholder="Password">
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-8 col-md-offset-2">
-													<input type="password" name="confirmPassword" id="confirmPassword" class="txtfield text-center" tabindex="2" placeholder="Confirm Password">
+													<input type="password" name="confirmPassword" id="confirm-Password" class="txtfield text-center" tabindex="2" placeholder="Confirm Password">
 												</div>
 											</div>
 										</form>
@@ -93,7 +90,7 @@
 							</div>
 							<div class="modal-footer">
 									<button type="button" id="getLogin" class="toggleModalBtn btn-lg btn-secondary" data-toggle="modal" data-target="loginModal" data-dismiss="modal">Back to Log In</button>
-									<button type="button" id="registerbtn" class="submitBtn btn-lg btn-secondary" data-dismiss="modal">Register</button>
+									<button type="submit" form="registerForm" value="Submit" id="registerbtn" class="submitBtn btn-lg btn-secondary" data-dismiss="modal">Register</button>
 
 							</div>
 					</div>

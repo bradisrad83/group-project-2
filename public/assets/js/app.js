@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $(".clickLog").click(function() {
     $('#logInModal').modal('show');
   });
@@ -12,4 +13,12 @@ $(document).ready(function() {
     $('#registerModal').modal('hide');
     $('#logInModal').modal('show');
   });
-})
+
+  $('#registerbtn').click( function() {
+  $.post( '/api/account', $('registerForm').serialize(), function(data) {
+      // do something with data?
+      // currently its saying "POST http://localhost:8080/api/account 404 (Not Found)"
+    });
+  });
+
+});
