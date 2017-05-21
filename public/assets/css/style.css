@@ -27,7 +27,6 @@ body {
  }
 
  .modal-header  {
-   background-image: url(../img/matchstick-modal-header.jpg);
    background-size: 70%;
    background-position: left;
    background-repeat: no-repeat;
@@ -37,6 +36,15 @@ body {
    border-right: 2px solid #ea8737;
    border-left: 2px solid #ea8737;
    height: 80px;
+ }
+
+ #login-header {
+   background-image: url(../img/matchstick-modal-header.jpg);
+ }
+
+ #register-header {
+   background-image: url(../img/matchstick-register-header.jpg);
+   background-size: 80%;
  }
 
  .modal-footer {
@@ -76,14 +84,14 @@ body {
    color: #d3d3d3;
  }
 
- #registerbtn {
+ .toggleModalBtn {
    background-color: #f7c331;
    border-color: #f7c331;
    color: #fff;
    margin-right: 1em;
  }
 
- #loginbtn {
+ .submitBtn {
    background-color: #ea8737;
    border-color: #ea8737;
    color: #fff;
