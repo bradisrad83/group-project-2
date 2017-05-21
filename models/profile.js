@@ -2,16 +2,6 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Profile = sequelize.define("Profile", {
-            Username: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                validate: {
-                    len: [1, 20],
-                    isUppercase: true,
-                    isLowercase: true,
-                    notEmpty: true
-                }
-            },
             firstName: {
                 type: DataTypes.STRING,
                 allowNull: false,
@@ -55,6 +45,17 @@ module.exports = function(sequelize, DataTypes) {
                 validate:{
                     isUrl: true //will make sure it is a link
                 }
+            }
+          },
+          {
+            classMethods:{
+              associate: function(models){
+                Profile.hasMany(models.Match,{
+                  foreignKey:{
+                    allowNull: true
+                  }
+                });
+              }
             }
           }
     );
