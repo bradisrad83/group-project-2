@@ -26,7 +26,10 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull: false,
                 unique: true,
                 validate: {
-                    isEmail: true
+                    isEmail:{
+                        args: true,
+                        msg:"Please type a validate Email address"
+                    }
                 }
             }
         },
