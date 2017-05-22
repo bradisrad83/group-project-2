@@ -10,18 +10,30 @@ module.exports= function (app) {
     });
 
     app.post("/api/account", function (req, res) {
+        req.checkBody("email", "Enter a valid email address.").isEmail();
+        var errors = req.validationErrors();
+        if (errors) {
+            console.log(errors);
+            res.send(error);
+            return;
+        } else {
+            // normal processing here
 
-        console.log(req.body)
 
-        db.Account.create({
-            username: req.body.username,
-            password:db.Account.generateHash(req.body.password),
-            email: req.body.email
-        }).then(function (dbaccounts) {
-            res.json(dbaccounts);
-        }).catch(function (error) {
-            res.status(500).json(error);
-        });
+            db.Account.create({
+                username: req.body.username,
+                password: db.Account.generateHash(req.body.password),
+                email: req.body.email
+            }).then(function (dbaccounts) {
+                res.json(dbaccounts);
+            }).catch(function (error) {
+                console.log(error);
+                res.status(500).json(error);
+            });
+
+        }
     });
 
 };
+
+
