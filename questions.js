@@ -14,7 +14,7 @@ var questions = [{
   },
   {
     question: "What genre of movies do you prefer?",
-    answer1: "Comdedy",
+    answer1: "Comedy",
     answer2: "Action/Thriller",
     answer3: "Horror",
     answer4: "Fantasy"
@@ -57,8 +57,8 @@ var questions = [{
   {
     question: "What is your favorite pizza topping?",
     answer1: "Pepperoni",
-    answer2: "Pineapple",
-    answer3: "Cheese",
+    answer2: "Cheese",
+    answer3: "Pineapple",
     answer4: "I dont like pizza"
   },
   {
