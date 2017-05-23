@@ -54,6 +54,7 @@ $(document).ready(function() {
         data: registerObj,
         success: function(result){
           console.log(result);
+          $('#registerForm')[0].reset();
         },
           error: function(error) {
           console.log(error);
@@ -61,14 +62,6 @@ $(document).ready(function() {
       });
     }
 
-
-
-
-  //$.post( '/api/account', $('registerForm').serialize(), function(data) {
-      //console.log(data);
-      // do something with data?
-      // currently its saying "POST http://localhost:8080/api/account 404 (Not Found)"
-    //});
   });
 
 });
