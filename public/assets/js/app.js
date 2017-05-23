@@ -58,6 +58,8 @@ $(document).ready(function() {
           // Save the token to a variable
           token = result.token;
           console.log(token);
+          localStorage.setItem('Token', token);
+          //sessionStorage.setItem('Token', token);
           $('#registerForm')[0].reset();
         },
           error: function(error) {

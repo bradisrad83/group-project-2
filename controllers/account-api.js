@@ -12,7 +12,7 @@ module.exports = function(app) {
       console.log(userAccounts);
     });
   });
-  
+
   app.post("/api/account", function(req, res) {
     req.checkBody("email", "Enter a valid email address.").isEmail();
     var errors = req.validationErrors();
@@ -28,7 +28,7 @@ module.exports = function(app) {
         username: req.body.username,
       }
     }, 'secret', {
-      expiresIn: '1h'
+      expiresIn: '12h'
     });
     // Console log the token
     console.log("Token: "+ token);
