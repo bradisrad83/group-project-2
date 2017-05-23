@@ -34,6 +34,7 @@ app.set("view engine", "handlebars");
 
 require("./controllers/profile-api.js")(app);
 require("./controllers/account-api.js")(app);
+require("./controllers/liked-api.js")(app);
 //require("./controller/profile.js")(app)
 
 
