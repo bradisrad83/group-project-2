@@ -5,7 +5,9 @@ var mysql = require("mysql");
 var methodOverride = require("method-override");
 var sequelize = require("sequelize");
 var bcrypt = require('bcrypt');
+
 var validator = require('express-validator');
+
 var db = require("./models");
 
 var app = express();
@@ -35,6 +37,7 @@ app.set("view engine", "handlebars");
 
 require("./controllers/profile-api.js")(app);
 require("./controllers/account-api.js")(app);
+require("./controllers/liked-api.js")(app);
 //require("./controller/profile.js")(app)
 
 
