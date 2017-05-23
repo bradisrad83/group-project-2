@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  var token;
 
   $(".clickLog").click(function() {
     $('#logInModal').modal('show');
@@ -14,11 +15,11 @@ $(document).ready(function() {
     $('#logInModal').modal('show');
   });
 
-  $('#registerbtn').click( function() {
+  $('#registerbtn').click(function() {
     var rName = $('#reg-username').val().trim();
     var rEmail = $('#reg-email').val().trim();
-    var rPassword =$('#reg-password').val().trim();
-    var confirmPass =$('#confirm-password').val().trim();
+    var rPassword = $('#reg-password').val().trim();
+    var confirmPass = $('#confirm-password').val().trim();
 
     var registerObj = {
       username: rName,
@@ -36,14 +37,14 @@ $(document).ready(function() {
             className: 'btn-success'
           },
           cancel: {
-              label: 'No',
-              className: 'btn-danger',
-              callback: function() {
-                $('#registerModal').modal('hide');
-              }
+            label: 'No',
+            className: 'btn-danger',
+            callback: function() {
+              $('#registerModal').modal('hide');
+            }
           }
         },
-        callback: function (result) {
+        callback: function(result) {
           console.log(result);
         }
       });
@@ -52,8 +53,11 @@ $(document).ready(function() {
         type: 'POST',
         url: 'api/account',
         data: registerObj,
-        success: function(result){
+        success: function(result) {
           console.log(result);
+          // Save the token to a variable
+          token = result.token;
+          console.log(token);
         }
       });
     }
@@ -61,10 +65,10 @@ $(document).ready(function() {
 
 
 
-  //$.post( '/api/account', $('registerForm').serialize(), function(data) {
-      //console.log(data);
-      // do something with data?
-      // currently its saying "POST http://localhost:8080/api/account 404 (Not Found)"
+    //$.post( '/api/account', $('registerForm').serialize(), function(data) {
+    //console.log(data);
+    // do something with data?
+    // currently its saying "POST http://localhost:8080/api/account 404 (Not Found)"
     //});
   });
 

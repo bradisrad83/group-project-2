@@ -5,7 +5,6 @@ var mysql = require("mysql");
 var methodOverride = require("method-override");
 var sequelize = require("sequelize");
 var bcrypt = require('bcrypt');
-
 var db = require("./models");
 
 var app = express();

@@ -32,7 +32,8 @@ module.exports = function(app) {
       password: db.Account.generateHash(req.body.password),
       email: req.body.email,
     }).then(function(dbaccounts) {
-      res.json({"dbaccounts": dbaccounts, "token": token });
+      // Send the json object to the app.js 
+      res.status(200).json({"dbaccounts": dbaccounts, "token": token });
       //console.log(dbaccounts);
     }).catch(function(error) {
       res.status(500).json(error);
