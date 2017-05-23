@@ -8,7 +8,9 @@ module.exports = function(sequelize, DataTypes) {
         username: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+            unique:{ args: true,
+                msg:"username has been used"
+            },
             validate: {
                 len: [1, 20],
                 isLowercase: true,

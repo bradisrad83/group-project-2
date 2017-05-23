@@ -57,7 +57,7 @@ $(document).ready(function() {
           $('#registerForm')[0].reset();
         },
           error: function(error) {
-          console.log(error);
+          console.log(error.responseJSON.errors[0].message);
           }
       });
     }

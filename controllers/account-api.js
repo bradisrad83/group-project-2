@@ -12,9 +12,9 @@ module.exports= function (app) {
     app.post("/api/account", function (req, res) {
         req.checkBody("email", "Enter a valid email address.").isEmail();
         var errors = req.validationErrors();
-        if (errors) {
+       if (errors) {
             console.log(errors);
-            res.send(error);
+           console.log(error);
             return;
         } else {
             // normal processing here
@@ -27,7 +27,7 @@ module.exports= function (app) {
             }).then(function (dbaccounts) {
                 res.json(dbaccounts);
             }).catch(function (error) {
-                console.log(error);
+
                 res.status(500).json(error);
             });
 
