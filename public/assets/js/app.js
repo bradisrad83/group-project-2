@@ -58,18 +58,13 @@ $(document).ready(function() {
           // Save the token to a variable
           token = result.token;
           console.log(token);
-        }
+          $('#registerForm')[0].reset();
+        },
+          error: function(error) {
+          console.log(error.responseJSON.errors[0].message);
+          }
       });
     }
-
-
-
-
-    //$.post( '/api/account', $('registerForm').serialize(), function(data) {
-    //console.log(data);
-    // do something with data?
-    // currently its saying "POST http://localhost:8080/api/account 404 (Not Found)"
-    //});
   });
 
 });
