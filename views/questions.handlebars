@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="survey">
+    {{#each questions}}
+      <div class="form-group">
+        <label>{{question}}</label>
+        <select class="form-control">
+          <option>{{answer1}}</option>
+          <option>{{answer2}}</option>
+          <option>{{answer3}}</option>
+          <option>{{answer4}}</option>
+          <option>{{answer5}}</option>
+        </select>
+      </div>
+    {{/each}}
+  </div>
+</div>

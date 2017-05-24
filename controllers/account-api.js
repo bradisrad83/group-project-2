@@ -34,6 +34,32 @@ module.exports = function(app) {
     })
   });
 
+    app.get("/questions", function(req, res){
+        db.Questions.findAll({}).then(function(dbquestions){
+            console.log(dbquestions);
+            res.render("questions", {questions: dbquestions});
+        });
+    });
+    app.get("/", function(req, res) {
+        res.render("login");
+    });
+
+    app.get("/dashboard", function(req, res) {
+        res.render("dashboard");
+    });
+
+    app.get("/profile", function(req,res) {
+        res.render("profile");
+    });
+
+    app.get("/api/account", function(req, res) {
+        db.Account.findAll({}).then(function(dbaccounts) {
+            var userAccounts = {
+                account: dbaccounts
+            };
+            console.log(userAccounts);
+        });
+
   app.post("/api/account", function(req, res) {
     req.checkBody("email", "Enter a valid email address.").isEmail();
     var errors = req.validationErrors();
