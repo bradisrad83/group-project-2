@@ -1,4 +1,4 @@
-//Creates a database for our questionairre  
+//Creates a database for our questionnaire
 module.exports = function(sequelize, DataTypes) {
   var Questions = sequelize.define("Questions", {
     question: {
@@ -20,4 +20,5 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   });
+  return Questions;
 };
