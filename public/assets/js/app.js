@@ -88,7 +88,9 @@ $('#loginbtn').click(function() {
             token = res.token;
             console.log(token);
             localStorage.setItem('Token', token);
-          console.log(res)
+            location.href = "/dashboard";
+
+            console.log(res)
         },
         error: function(error){
           console.log(error)
