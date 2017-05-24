@@ -4,6 +4,12 @@ var jwt = require("jsonwebtoken");
 
 
 module.exports = function(app) {
+  app.get("/questions", function(req, res){
+    db.Questions.findAll({}).then(function(dbquestions){
+      console.log(dbquestions);
+      res.render("questions", {questions: dbquestions});
+    });
+  });
   app.get("/", function(req, res) {
     res.render("login");
   });
