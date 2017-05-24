@@ -61,6 +61,7 @@ $(document).ready(function() {
           localStorage.setItem('Token', token);
           //sessionStorage.setItem('Token', token);
           $('#registerForm')[0].reset();
+          location.href = "/dashboard";
         },
           error: function(error) {
           console.log(error.responseJSON.errors[0].message);

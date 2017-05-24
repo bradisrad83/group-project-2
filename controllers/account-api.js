@@ -4,6 +4,18 @@ var jwt = require("jsonwebtoken");
 
 
 module.exports = function(app) {
+  app.get("/", function(req, res) {
+    res.render("login");
+  });
+
+  app.get("/dashboard", function(req, res) {
+    res.render("dashboard");
+  });
+
+  app.get("/profile", function(req,res) {
+    res.render("profile");
+  });
+
   app.get("/api/account", function(req, res) {
     db.Account.findAll({}).then(function(dbaccounts) {
       var userAccounts = {
