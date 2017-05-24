@@ -19,6 +19,8 @@ module.exports = function(sequelize, DataTypes) {
     answer5: {
       type: DataTypes.STRING
     }
+  },{
+    timestamps: false
   });
   return Questions;
 };
