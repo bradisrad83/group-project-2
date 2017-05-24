@@ -97,3 +97,24 @@ body {
    color: #fff;
    margin-right: 1em;
  }
+
+ .navbar-brand>img {
+    height: 80px;
+}
+
+.navbar-brand {
+    padding-top: 10px;
+}
+
+.dashBoardIcon {
+  font-size: 300%
+}
+
+#dashIconGrid {
+  color: #fff;
+  margin-top: 20%;
+}
+
+#dashIconGrid>a:visted {
+  display: none;
+}
