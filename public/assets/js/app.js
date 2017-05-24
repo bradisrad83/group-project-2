@@ -20,7 +20,6 @@ $(document).ready(function() {
     var rEmail = $('#reg-email').val().trim();
     var rPassword = $('#reg-password').val().trim();
     var confirmPass = $('#confirm-password').val().trim();
-
     var registerObj = {
       username: rName,
       email: rEmail,
@@ -69,4 +68,30 @@ $(document).ready(function() {
     }
   });
 
+
+$('#loginbtn').click(function() {
+    var lName = $('#log-username').val().trim();
+    var lPassword = $('#log-password').val().trim();
+  console.log(lName);
+  console.log(lPassword);
+    var loginObj = {
+        username: lName,
+        password: lPassword
+    };
+    console.log(loginObj);
+    $.ajax({
+        type: 'post',
+        url: 'api/login',
+        data:loginObj,
+        success: function(res){
+            token = res.token;
+            console.log(token);
+            localStorage.setItem('Token', token);
+          console.log(res)
+        },
+        error: function(error){
+          console.log(error)
+        }
+    });
+  });
 });

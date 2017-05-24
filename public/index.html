@@ -31,7 +31,7 @@
               </div>
               <div class="modal-body">
                   <div class="form-group">
-                    <form id="loginForm" name="loginForm" method="get" action="index.html">
+                    <form id="loginForm" name="loginForm" method="GET" action="/api/login">
                       <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                           <input type="text" name="username" id="log-username" class="txtfield text-center" tabindex="1" placeholder="Username">
@@ -47,7 +47,7 @@
               </div>
               <div class="modal-footer">
                   <button type="button" id="getRegModal" class="toggleModalBtn btn-lg btn-secondary" data-toggle="modal" data-target="registerModal" data-dismiss="modal">Register</button>
-                  <button type="button" id="loginbtn" class="submitBtn btn-lg btn-secondary" data-dismiss="modal">Log In</button>
+                  <button type="submit" form="loginForm"  value="Submit"  id="loginbtn" class="submitBtn btn-lg btn-secondary" data-dismiss="modal">Log In</button>
               </div>
           </div>
       </div>

@@ -4,13 +4,34 @@ var jwt = require("jsonwebtoken");
 
 
 module.exports = function(app) {
-  app.get("/api/account", function(req, res) {
-    db.Account.findAll({}).then(function(dbaccounts) {
-      var userAccounts = {
-        account: dbaccounts
-      };
-      console.log(userAccounts);
-    });
+  app.post("/api/login", function(req, res) {
+      var Username = req.body.username;
+      var Password = req.body.password;
+      console.log(Username);
+      console.log(Password);
+    db.Account.findOne({
+        where: {
+            username: Username
+        }
+    }).then(function(user){
+        if (!user || !db.Account.validPassword(Password,user.password)) {
+            res.status(401).json({message:'Incorrect username or password'})
+        }else{
+            var token = jwt.sign({
+                data: {
+                    username: req.body.username,
+                }
+            }, 'secret', {
+                expiresIn: '12h'
+            });
+            // Console log the token
+            console.log("Token: "+ token);
+            res.status(200).json({message:'Successfully authenticated.', "token": token})
+        }
+    }).catch(function(error){
+        console.log(error);
+        res.status(500).json({message:'Internal server error'})
+    })
   });
 
   app.post("/api/account", function(req, res) {
