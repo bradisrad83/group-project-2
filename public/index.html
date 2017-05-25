@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Matchstick</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+  <div id="signInIcon" class="clickLog"><i class ="fa fa-sign-in fa-4x" aria-hidden="true"></i></div>
+
+	<div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <img id="logoLog" class="clickLog img-responsive" src="assets/img/matchstick-logo.png" alt="Matchstick Logo" />
+      </div>
+    </div>
+    <h1 id="tagline" class="clickLog text-center" >Ignite a new relationship!</h1>
+	</div>
+
+  <!-- Login Modal -->
+  <div id="logInModal" class="modal fade"  tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header" id="login-header" >
+              </div>
+              <div class="modal-body">
+                  <div class="form-group">
+                    <form id="loginForm" name="loginForm" method="get" action="/api/login">
+                      <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                          <input type="text" name="username" id="log-username" class="txtfield text-center" tabindex="1" placeholder="Username">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                          <input type="password" name="password" id="log-password" class="txtfield text-center" tabindex="2" placeholder="Password">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" id="getRegModal" class="toggleModalBtn btn-lg btn-secondary" data-toggle="modal" data-target="registerModal" data-dismiss="modal">Register</button>
+                  <button type="submit" form="loginForm"  value="Submit"  id="loginbtn" class="submitBtn btn-lg btn-secondary" data-dismiss="modal">Log In</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+	<!-- Register Modal -->
+	<div id="registerModal" class="modal fade"  tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+					<div class="modal-content">
+							<div class="modal-header" id="register-header" >
+							</div>
+							<div class="modal-body">
+									<div class="form-group">
+										<form id="registerForm" name="registerForm" method="POST" action="/api/account">
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<input type="text" name="username" id="reg-username" class="txtfield text-center" tabindex="1" placeholder="Username">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<input type="email" name="email" id="reg-email" class="txtfield text-center" tabindex="2" placeholder="Email">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<input type="password" name="password" id="reg-password" class="txtfield text-center" tabindex="2" placeholder="Password">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<input type="password" name="confirmPassword" id="confirm-password" class="txtfield text-center" tabindex="2" placeholder="Confirm Password">
+												</div>
+											</div>
+										</form>
+									</div>
+							</div>
+							<div class="modal-footer">
+									<button type="button" id="getLogin" class="toggleModalBtn btn-lg btn-secondary" data-toggle="modal" data-target="loginModal" data-dismiss="modal">Back to Log In</button>
+									<button type="submit" form="registerForm" value="Submit" id="registerbtn" class="submitBtn btn-lg btn-secondary" data-dismiss="modal">Register</button>
+
+							</div>
+					</div>
+			</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+</body>
+</html>

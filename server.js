@@ -19,7 +19,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-app.use(bodyParser.json());
 app.use(validator());
 
 app.use(methodOverride("_method"));
@@ -42,7 +41,7 @@ require("./controllers/liked-api.js")(app);
 
 
 
-db.sequelize.sync({/*force:true*/}).then(function() {
+db.sequelize.sync({force:true}).then(function() {
   app.listen(PORT, function() {
     console.log(`App running on port: ${PORT}`);
   });
