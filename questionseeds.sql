@@ -118,3 +118,13 @@ INSERT INTO Questions (question, answer1, answer2, answer3, answer4, answer5) VA
   "Yes but it has to be the right book",
   "I read one once or month or so",
   "As much as I possibly can, all my free time is spent reading");
+
+  INSERT INTO Accounts (username, password, email, createdAt) VALUES ("aaa", "aaa", "aaa@aaa.com", "");
+  INSERT INTO Accounts (username, password, email, createdAt) VALUES ("bbb", "bbb", "bbb@bbb.com", "");
+  INSERT INTO Accounts (username, password, email, createdAt) VALUES ("ccc", "ccc", "ccc@ccc.com", "");
+  INSERT INTO Accounts (username, password, email, createdAt) VALUES ("ddd", "ddd", "ddd@ddd.com", "");
+  INSERT INTO Accounts (username, password, email, createdAt) VALUES ("eee", "eee", "eee@eee.com", "");
+  INSERT INTO Accounts (username, password, email, createdAt) VALUES ("fff", "fff", "fff@fff.com", "");
+  INSERT INTO Accoutns (username, password, email, createdAt) VALUES ("ggg", "ggg", "ggg@ggg.com", "");
+  INSERT INTO Accounts (username, password, email, createdAt) VALUES ("hhh", "hhh", "hhh@hhh.com", "");
+  INSERT INTO Accounts (username, password, email, createdAt) VALUES ("jjj", "jjj", "jjj@jjj.com", "");
