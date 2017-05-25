@@ -68,23 +68,23 @@ $(document).ready(function() {
 
           switch (errorMsg) {
             case uniqueUsername:
-              $('#regErrMsg').append("<h4 class='text-center' style='color:#ea8737;'>Sorry, that username is in use, please choose a new one</h4>");
+              $('#regErrMsg').prepend("<h4 class='text-center' style='color:#ea8737;'>Sorry, that username is in use, please choose a new one</h4>");
               $('#registerModal').modal('show');
               break;
             case tooLong:
-              $('#regErrMsg').append("<h4 class='text-center' style='color:#ea8737;'>Sorry, that username is to long, please limit it to 20 characters or less</h4>");
+              $('#regErrMsg').prepend("<h4 class='text-center' style='color:#ea8737;'>Sorry, that username is to long, please limit it to 20 characters or less</h4>");
               $('#registerModal').modal('show');
               break;
             case uniqueEmail:
-              $('#regErrMsg').append("<h4 class='text-center' style='color:#ea8737;'>Sorry, that email is in use.</h4>");
+              $('#regErrMsg').prepend("<h4 class='text-center' style='color:#ea8737;'>Sorry, that email is in use.</h4>");
               $('#registerModal').modal('show');
               break;
             case invalideEmail:
-              $('#regErrMsg').append("<h4 class='text-center' style='color:#ea8737;'>Sorry, that email is not valid please check and re-enter.</h4>");
+              $('#regErrMsg').prepend("<h4 class='text-center' style='color:#ea8737;'>Sorry, that email is not valid please check and re-enter.</h4>");
               $('#registerModal').modal('show');
               break;
             default:
-              $('#regErrMsg').append("<h4 class='text-center' style='color:#ea8737;'>Sorry, something went wrong please re-register.</h4>");
+              $('#regErrMsg').prepend("<h4 class='text-center' style='color:#ea8737;'>Sorry, something went wrong please re-register.</h4>");
               $('#registerModal').modal('show');
           } //close switch
         }
@@ -123,5 +123,3 @@ $('#loginbtn').click(function() {
     });
   });
 });
-
-
