@@ -41,7 +41,7 @@ require("./controllers/liked-api.js")(app);
 
 
 
-db.sequelize.sync({/*force:true*/}).then(function() {
+db.sequelize.sync({force:true}).then(function() {
   app.listen(PORT, function() {
     console.log(`App running on port: ${PORT}`);
   });
