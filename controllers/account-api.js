@@ -34,6 +34,20 @@ module.exports = function(app) {
         })
     });
 
+  });
+
+  app.post("/api/account", function(req, res) {
+
+    console.log(req.body);
+    // Create the JSON-WebToken
+    var token = jwt.sign({
+      data: {
+        username: req.body.username,
+      }
+    }, 'secret', {
+      expiresIn: '12h'
+
+
     app.get("/questions", function (req, res) {
         db.Questions.findAll({}).then(function (dbquestions) {
             console.log(dbquestions);
@@ -59,6 +73,7 @@ module.exports = function(app) {
             };
             console.log(userAccounts);
         });
+
     });
 
     app.post("/api/account", function (req, res) {
@@ -94,4 +109,8 @@ module.exports = function(app) {
             });
         }
     });
+
+
+});
+
 };
