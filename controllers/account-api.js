@@ -26,13 +26,13 @@ module.exports = function(app) {
   });
 
   app.post("/api/account", function(req, res) {
-    req.checkBody("email", "Enter a valid email address.").isEmail();
+    /*req.checkBody("email", "Enter a valid email address.").isEmail();
     var errors = req.validationErrors();
    if (errors) {
         console.log(errors);
-       console.log(error);
+        res.status(504).json(errors);
         return;
-    } else {
+    } else { */
     console.log(req.body);
     // Create the JSON-WebToken
     var token = jwt.sign({
@@ -56,6 +56,6 @@ module.exports = function(app) {
     }).catch(function(error) {
       res.status(500).json(error);
     });
-  }
+  //}
 });
 };
