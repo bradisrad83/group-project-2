@@ -194,20 +194,25 @@
 
 
 
-  //$('#profErrMsg').html("");
+    $.ajaxPrefilter(function( options ) {
+     if (options.beforeSend) {
+        options.beforeSend = function (xhr) {
+            xhr.setRequestHeader('Authorization', 'Bearer '+localStorage.getItem('token'));
+        }
+    }
+    });
 
     $.ajax({
       type: 'POST',
       url: 'api/profile',
-      headers: {"Authorization": localStorage.getItem('token')},
       data: profileObj,
       success: function(result) {
         console.log(result);
         // Save the token to a variable
-        token = result.token;
+        //token = result.token;
 
-        console.log(token);
-        localStorage.getItem('Token', token);
+        //console.log(token);
+        //localStorage.getItem('Token', token);
         location.href = "/dashboard";
       }
     }); //close ajax
