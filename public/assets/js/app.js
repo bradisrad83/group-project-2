@@ -104,6 +104,8 @@ $('#loginbtn').click(function() {
         username: lName,
         password: lPassword
     };
+
+    $('#logErrMsg').html("");
     console.log(loginObj);
     $.ajax({
         type: 'post',
@@ -118,7 +120,9 @@ $('#loginbtn').click(function() {
             console.log(res)
         },
         error: function(error){
-          console.log(error)
+          console.log(error);
+          $('#logErrMsg').prepend("<h4 class='text-center' style='color:#ea8737;'>Your username or password is incorrect.</h4>");
+          $('#logInModal').modal('show');
         }
     });
   });
