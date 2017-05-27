@@ -1,8 +1,36 @@
+/*
+    -----------------------------
+    ----- 1. App wide styles-----
+    -----------------------------
+*/
 body {
     background-image: url(../img/matchstick-background.jpg);
     background-size: cover;
     background-position: top;
     font-family: 'Asap', sans-serif;
+}
+
+.well {
+  background-color: rgba(256, 256, 256, .9);
+}
+
+/*
+    -----------------------------
+    ----- 2. Login styles--------
+    -----------------------------
+*/
+#logoLog {
+    display: block;
+    vertical-align: middle;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tagline {
+   color: #fff;
+   text-shadow: 2px 2px #6b7a87;
+   font-size: 330%;
 }
 
 #signInIcon {
@@ -12,93 +40,83 @@ body {
   top: 2em;
 }
 
-#logoLog {
-    display: block;
-    vertical-align: middle;
-    margin-top: 20%;
-    margin-left: auto;
-    margin-right: auto;
- }
+.modal-header  {
+  background-size: 70%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-color: #dcc7aa;
+  color: #6b7a87;
+  border-top: 2px solid #ea8737;
+  border-right: 2px solid #ea8737;
+  border-left: 2px solid #ea8737;
+  height: 80px;
+}
 
- #tagline {
-    color: #fff;
-    text-shadow: 2px 2px #6b7a87;
-    font-size: 330%;
- }
+#login-header {
+  background-image: url(../img/matchstick-modal-header.jpg);
+}
 
- .modal-header  {
-   background-size: 70%;
-   background-position: left;
-   background-repeat: no-repeat;
-   background-color: #dcc7aa;
-   color: #6b7a87;
-   border-top: 2px solid #ea8737;
-   border-right: 2px solid #ea8737;
-   border-left: 2px solid #ea8737;
-   height: 80px;
- }
+#register-header {
+  background-image: url(../img/matchstick-register-header.jpg);
+  background-size: 80%;
+}
 
- #login-header {
-   background-image: url(../img/matchstick-modal-header.jpg);
- }
+.modal-footer {
+  background-image: url(../img/matchstick-modal-footer.jpg);
+  background-size: 70%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-color: #dcc7aa;
+  color: #6b7a87;
+  border-bottom: : 2px solid #ea8737;
+  border-right: 2px solid #ea8737;
+  border-left: 2px solid #ea8737;
+}
 
- #register-header {
-   background-image: url(../img/matchstick-register-header.jpg);
-   background-size: 80%;
- }
+.modal-body {
+  background-image: url(../img/matchstick-modal-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: #6b7a87;
+  border-right: 2px solid #ea8737;
+  border-left: 2px solid #ea8737;
+  color: #fff;
+  padding: 6em 0;
+}
 
- .modal-footer {
-   background-image: url(../img/matchstick-modal-footer.jpg);
-   background-size: 70%;
-   background-position: left;
-   background-repeat: no-repeat;
-   background-color: #dcc7aa;
-   color: #6b7a87;
-   border-bottom: : 2px solid #ea8737;
-   border-right: 2px solid #ea8737;
-   border-left: 2px solid #ea8737;
- }
+.txtfield {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 200%;
+  color: #6b7a87;
+  border-radius: 10px;
+}
 
+::-webkit-input-placeholder {
+  color: #d3d3d3;
+}
 
- .modal-body {
-   background-image: url(../img/matchstick-modal-background.jpg);
-   background-size: cover;
-   background-position: center;
-   background-color: #6b7a87;
-   border-right: 2px solid #ea8737;
-   border-left: 2px solid #ea8737;
-   color: #fff;
-   padding: 6em 0;
+.toggleModalBtn {
+  background-color: #f7c331;
+  border-color: #f7c331;
+  color: #fff;
+  margin-right: 1em;
+}
 
- }
+.submitBtn {
+  background-color: #ea8737;
+  border-color: #ea8737;
+  color: #fff;
+  margin-right: 1em;
+}
 
- .txtfield {
-   margin-top: 20px;
-   width: 100%;
-   font-size: 200%;
-   color: #6b7a87;
-   border-radius: 10px;
- }
+/*
+    -----------------------------
+    ----- 3. Navbar styles-------
+    -----------------------------
+*/
 
- ::-webkit-input-placeholder {
-   color: #d3d3d3;
- }
-
- .toggleModalBtn {
-   background-color: #f7c331;
-   border-color: #f7c331;
-   color: #fff;
-   margin-right: 1em;
- }
-
- .submitBtn {
-   background-color: #ea8737;
-   border-color: #ea8737;
-   color: #fff;
-   margin-right: 1em;
- }
-
- .navbar-brand>img {
+.navbar-brand>img {
     height: 80px;
 }
 
@@ -106,22 +124,41 @@ body {
     padding-top: 10px;
 }
 
+.searchMatches {
+    background-color: #ea8737;
+    color: #fff;
+}
+
+/*
+    --------------------------------
+    ----- 3. Dashboard styles-------
+    --------------------------------
+*/
+
 .dashBoardIcon {
   font-size: 300%
 }
 
 #dashIconGrid {
   color: #fff;
-  margin-top: 20%;
+  margin-top: 10%;
+}
+
+.dashIcon {
+  padding: 2em;
 }
 
 #dashIconGrid>a:visted {
   display: none;
 }
 
-.well {
-  background-color: rgba(256, 256, 256, .9);
-}
+/*
+    ------------------------------
+    ----- 4. Profile styles-------
+    ------------------------------
+*/
+
+
 
 .input-group-addon {
   background-color: #ea8737;
