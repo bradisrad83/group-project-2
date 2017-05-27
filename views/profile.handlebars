@@ -3,7 +3,7 @@
 
 <div class="container profile-form">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action="/api/profile" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -16,7 +16,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  id="prof-firstname" name="first_name" placeholder="First Name" class="form-control"  type="text">
+  <input  id="prof-firstname" name="firstName" placeholder="First Name" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -28,7 +28,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input id="prof-lastname" name="last_name" placeholder="Last Name" class="form-control"  type="text">
+  <input id="prof-lastname" name="lastName" placeholder="Last Name" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -40,7 +40,7 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select id="prof-state" name="state" class="form-control selectpicker" >
+    <select id="location" name="location" class="form-control selectpicker" >
       <option value=" " >Please select your state</option>
       <option>Alabama</option>
       <option>Alaska</option>
@@ -105,7 +105,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input id="prof-zipcode" name="zip" placeholder="Zip Code" class="form-control"  type="text">
+  <input id="prof-zipcode" name="zipCode" placeholder="Zip Code" class="form-control"  type="text">
     </div>
 </div>
 </div>
@@ -116,7 +116,7 @@
    <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-  <input id="prof-image" name="website" placeholder="Website or domain name" class="form-control" type="text">
+  <input id="prof-image" name="imgLink" placeholder="Website or domain name" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -127,12 +127,12 @@
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="prof-sex" value="yes" /> Male
+                                    <input type="radio" name="sex" value="yes" /> Male
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="prof-sex" value="no" /> Female
+                                    <input type="radio" name="sex" value="no" /> Female
                                 </label>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<textarea id="prof-bio" class="form-control" name="comment" placeholder="Tell us about yourself"></textarea>
+        	<textarea id="prof-bio" class="form-control" name="bio" placeholder="Tell us about yourself"></textarea>
   </div>
   </div>
 </div>
@@ -172,12 +172,12 @@
 
   $('#profileBtn').click( function() {
     var pFirstName = $('#prof-firstname').val().trim();
-    var pLastName = $('#prof=lastname').val().trim();
+    var pLastName = $('#prof-lastname').val().trim();
     var pState = $('#prof-state').val().trim();
     var pZipcode = $('#prof-zipcode').val().trim();
     var pBio = $('#prof-bio').val().trim();
     var pImgLink = $('#prof-image').val().trim();
-    var pSex = $('input[name=prof-sex]:checked').val().trim();
+    var pSex = $('input[name=sex]:checked').val().trim();
 
     var profileObj = {
       firstName: pFirstName,
@@ -186,7 +186,7 @@
       location: pState,
       zipCode: pZipcode,
       bio: pBio,
-      imgLink: pImgLink,
+      imgLink: pImgLink
 
     };
 
@@ -203,7 +203,7 @@
     });
 
     $.ajax({
-      type: 'POST',
+      type: 'post',
       url: 'api/profile',
       data: profileObj,
       success: function(result) {
