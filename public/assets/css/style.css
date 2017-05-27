@@ -118,3 +118,12 @@ body {
 #dashIconGrid>a:visted {
   display: none;
 }
+
+.well {
+  background-color: rgba(256, 256, 256, .9);
+}
+
+.input-group-addon {
+  background-color: #ea8737;
+  color: #fff;
+}

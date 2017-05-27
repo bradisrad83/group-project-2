@@ -16,6 +16,10 @@ module.exports = function(sequelize, DataTypes) {
                     len: [1]
                 }
             },
+            sex:{
+                type: DataTypes.STRING,
+                allowNull: false
+            },
             location:{
                 type: DataTypes.STRING,
                 allowNull: false,
