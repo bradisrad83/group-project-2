@@ -4,6 +4,9 @@ module.exports = function(sequelize, DataTypes) {
     question: {
       type: DataTypes.STRING
     },
+    qId: {
+      type: DataTypes.STRING
+    },
     answer1: {
       type: DataTypes.STRING
     },
