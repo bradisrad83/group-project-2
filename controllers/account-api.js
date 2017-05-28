@@ -45,7 +45,7 @@ module.exports = function(app) {
     res.render("login");
   });
 
-  app.get("/dashboard", function(req, res) {
+  app.get("/dashboard/:username", function(req, res) {
     res.render("dashboard");
   });
 
