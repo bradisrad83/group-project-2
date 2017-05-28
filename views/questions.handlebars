@@ -2,17 +2,51 @@
 
 <div class="well container">
   <div class="survey">
+
+    <legend>Survey</legend>
     {{#each questions}}
-      <div class="form-group">
-        <label>{{question}}</label>
-        <select class="form-control">
-          <option>{{answer1}}</option>
-          <option>{{answer2}}</option>
-          <option>{{answer3}}</option>
-          <option>{{answer4}}</option>
-          <option>{{answer5}}</option>
+      <div class="questionBlock form-group">
+        <label><h4>{{question}}</h4></label>
+        <select id="{{qId}}" data-placeholder="" class="form-control qForm">
+          <option value=""></option>
+          <option value="1">{{answer1}}</option>
+          <option value="2">{{answer2}}</option>
+          <option value="3">{{answer3}}</option>
+          <option value="4">{{answer4}}</option>
+          <option value="5">{{answer5}}</option>
         </select>
       </div>
     {{/each}}
+    <!-- Submit Button -->
+    <button id="surveySubmit" type="submit" class="btn btn-warning">
+      SUBMIT<span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script>
+$("#surveySubmit").on("click", function(){
+  function validateForm() {
+		var isValid = true;
+		$('.form-control').each(function() {
+			if ( $(this).val() === '' )
+		    	isValid = false;
+		});
+	  	return isValid;
+	}
+
+	// If all required fields are filled
+	if (validateForm()) {
+      //add some code to post the answer array to the profile table?
+  }
+  else
+  {
+    alert("Please fill out all fields before submitting!");
+  }
+
+  return false;
+
+});
+</script>

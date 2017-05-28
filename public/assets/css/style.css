@@ -158,9 +158,27 @@ body {
     ------------------------------
 */
 
-
-
 .input-group-addon {
   background-color: #ea8737;
   color: #fff;
+}
+
+/*
+    ------------------------------
+    ----- 4. Survey styles--------
+    ------------------------------
+*/
+
+.questionBlock {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-control {
+  width: 70%;
+}
+
+#surveySubmit {
+  margin: 1em 0 1em 20%;
+  font-size: 250%;
 }
