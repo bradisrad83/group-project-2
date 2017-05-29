@@ -204,7 +204,7 @@
 
     $.ajax({
       type: 'post',
-      url: 'api/profile',
+      url: '/api/profile',
       data: profileObj,
       success: function(result) {
         console.log(result);
@@ -213,7 +213,7 @@
 
         //console.log(token);
         //localStorage.getItem('Token', token);
-        location.href = "/dashboard";
+        location.href = "/dashboard/:herewego";
       }
     }); //close ajax
 
