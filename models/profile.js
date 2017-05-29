@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
                 }
             },
             sex:{
-                type: DataTypes.STRING,
+                type: DataTypes.BOOLEAN,
                 allowNull: false
             },
             location:{

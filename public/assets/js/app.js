@@ -115,7 +115,7 @@ $('#loginbtn').click(function() {
             token = res.token;
             console.log(token);
             localStorage.setItem('Token', token);
-            location.href = "/dashboard";
+            location.href = "/dashboard/" + loginObj.username;
 
             console.log(res)
         },
