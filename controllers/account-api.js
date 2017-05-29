@@ -46,7 +46,16 @@ module.exports = function(app) {
   });
 
   app.get("/dashboard/:username", function(req, res) {
-    res.render("dashboard");
+    db.Account.findOne({
+      where:{
+        username: req.params.username
+      }
+    }).then(function(dbaccounts){
+      console.log("Id in the Table: " + dbaccounts.dataValues.id);
+
+      res.render("dashboard");
+    });
+
   });
 
   app.get("/profile", function(req,res) {
