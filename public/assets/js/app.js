@@ -42,20 +42,21 @@ $(document).ready(function() {
     } else {
       $.ajax({
         type: 'POST',
-        url: 'api/account',
+        url: '/api/account',
         data: registerObj,
         success: function(result) {
           //console.log(result);
           // Save the token to a variable
           token = result.token;
 
-
-
           localStorage.setItem('Token', token);
-          //sessionStorage.setItem('Token', token);
+          sessionStorage.setItem('Token', token);
           $('#registerForm')[0].reset();
-          location.href = "/dashboard/" + registerObj.username;
+
           console.log("rName: " + rName);
+          console.log("Token ", token);
+          debugger;
+          location.href = "/dashboard/" + registerObj.username;
         },
         error: function(error) {
 

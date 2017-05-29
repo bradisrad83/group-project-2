@@ -20,7 +20,7 @@ module.exports = function(app) {
             } else {
                 var token = jwt.sign({
                     data: {
-                        username: req.body.username,
+                        uid: req.body.id
                     }
                 }, 'secret', {
                     expiresIn: '12h'
@@ -72,30 +72,20 @@ module.exports = function(app) {
   });
 
   app.post("/api/account", function(req, res) {
-    /*req.checkBody("email", "Enter a valid email address.").isEmail();
-    var errors = req.validationErrors();
-   if (errors) {
-        console.log(errors);
-        res.status(504).json(errors);
-        return;
-    } else { */
-    console.log(req.body);
-    // Create the JSON-WebToken
-    var token = jwt.sign({
-      data: {
-        username: req.body.username,
-      }
-    }, 'secret', {
-      expiresIn: '12h'
-    });
-    // Console log the token
-    console.log("Token: "+ token);
 
     db.Account.create({
       username: req.body.username,
       password: db.Account.generateHash(req.body.password),
       email: req.body.email,
     }).then(function(dbaccounts) {
+      // Create the JSON-WebToken
+      var token = jwt.sign({
+        data: {
+          uid: dbaccounts.id
+        }
+      }, 'secret', {
+        expiresIn: '12h'
+      });
       // Send the json object to the app.js
       res.status(200).json({"dbaccounts": dbaccounts, "token": token });
       //console.log(dbaccounts);
