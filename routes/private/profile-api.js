@@ -1,4 +1,4 @@
-var db = require("../models/index");
+var db = require("../../models/index");
 
 module.exports = function(app){
   // Route to get all the profile and send the json to the api route

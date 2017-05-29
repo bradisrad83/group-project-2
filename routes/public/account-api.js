@@ -1,4 +1,4 @@
-var db = require("../models/index");
+var db = require("../../models/index");
 // Json Webtoken
 var jwt = require("jsonwebtoken");
 
