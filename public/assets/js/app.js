@@ -45,16 +45,17 @@ $(document).ready(function() {
         url: 'api/account',
         data: registerObj,
         success: function(result) {
-          console.log(result);
+          //console.log(result);
           // Save the token to a variable
           token = result.token;
-          console.log("--------------username-----------");
-          console.log(rName);
-          console.log("--------------username-----------");
+
+
+
           localStorage.setItem('Token', token);
           //sessionStorage.setItem('Token', token);
           $('#registerForm')[0].reset();
-          location.href = "/dashboard/:username";
+          location.href = "/dashboard/" + registerObj.username;
+          console.log("rName: " + rName);
         },
         error: function(error) {
 
