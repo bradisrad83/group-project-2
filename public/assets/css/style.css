@@ -141,15 +141,36 @@ body {
 
 #dashIconGrid {
   color: #fff;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .dashIcon {
-  padding: 2em;
+  margin: auto;
+  padding: 3em;
+}
+
+.img-wrapper {
+  width: 80%;
+  margin: auto;
 }
 
 #dashIconGrid>a:visted {
   display: none;
+}
+
+.iconText {
+  position: relative;
+  top: -50px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #6b7a87;
+  font-size: 200%;
+
+}
+
+.iconText a {
+
 }
 
 /*
