@@ -20,7 +20,7 @@ module.exports = function(app) {
             } else {
                 var token = jwt.sign({
                     data: {
-                        username: req.body.username,
+                        uId: req.body.id,
                     }
                 }, 'secret', {
                     expiresIn: '12h'
@@ -35,32 +35,11 @@ module.exports = function(app) {
         })
     });
 
-    app.get("/questions", function (req, res) {
-        db.Questions.findAll({}).then(function (dbquestions) {
-            console.log(dbquestions);
-            res.render("questions", {questions: dbquestions});
-        });
-    });
+
   app.get("/", function(req, res) {
     res.render("login");
   });
 
-  app.get("/dashboard/:username", function(req, res) {
-    db.Account.findOne({
-      where:{
-        username: req.params.username
-      }
-    }).then(function(dbaccounts){
-      //console.log("Id in the Table: " + dbaccounts.dataValues.id);
-
-      res.render("dashboard");
-    });
-
-  });
-
-  app.get("/profile", function(req,res) {
-    res.render("profile");
-  });
 
   app.get("/api/account", function(req, res) {
     db.Account.findAll({}).then(function(dbaccounts) {
@@ -80,16 +59,6 @@ module.exports = function(app) {
         return;
     } else { */
     console.log(req.body);
-    // Create the JSON-WebToken
-    var token = jwt.sign({
-      data: {
-        username: req.body.username,
-      }
-    }, 'secret', {
-      expiresIn: '12h'
-    });
-    // Console log the token
-    console.log("Token: "+ token);
 
     db.Account.create({
       username: req.body.username,
@@ -97,6 +66,16 @@ module.exports = function(app) {
       email: req.body.email,
     }).then(function(dbaccounts) {
       // Send the json object to the app.js
+      // Create the JSON-WebToken
+      var token = jwt.sign({
+        data: {
+          uId: req.body.id,
+        }
+      }, 'secret', {
+        expiresIn: '12h'
+      });
+      // Console log the token
+      console.log("Token: "+ token);
       res.status(200).json({"dbaccounts": dbaccounts, "token": token });
       //console.log(dbaccounts);
     }).catch(function(error) {

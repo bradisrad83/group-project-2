@@ -26,5 +26,22 @@ module.exports = function(app){
       res.status(500).json(error);
     });
   });
+  app.get("/dashboard/:username", function(req, res) {
+    db.Account.findOne({
+      where:{
+        username: req.params.username
+      }
+    }).then(function(dbaccounts){
+      //console.log("Id in the Table: " + dbaccounts.dataValues.id);
+
+      res.render("dashboard");
+    });
+
+  });
+
+  app.get("/profile", function(req,res) {
+    res.render("profile");
+  });
+
 
 };
