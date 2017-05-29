@@ -1,0 +1,23 @@
+ALTER TABLE `surveyQuestions` MODIFY COLUMN `createdAt` DATETIME NOT NULL DEFAULT NOW();
+ALTER TABLE `surveyQuestions` MODIFY COLUMN `updatedAt` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW();
+
+INSERT INTO surveyQuestions (question) VALUES ("Your friend calls and says let's go grab a beer.  What do you do?");
+INSERT INTO surveyQuestions (question) VALUES ("How do you feel about snow, and winter in general?");
+INSERT INTO surveyQuestions (question) VALUES ("A horror movie comes on, what do you do?");
+INSERT INTO surveyQuestions (question) VALUES ("What's your stance on the great pineapple pizza debate?");
+INSERT INTO surveyQuestions (question) VALUES ("Are you an person whom is always on time?");
+INSERT INTO surveyQuestions (question) VALUES ("Country music, and go.");
+INSERT INTO surveyQuestions (question) VALUES ("Is blue your favorite color?");
+INSERT INTO surveyQuestions (question) VALUES ("How do you feel about a hike for a date?");
+INSERT INTO surveyQuestions (question) VALUES ("How do you feel about Halloween?");
+INSERT INTO surveyQuestions (question) VALUES ("You have a week off, road trip?");
+INSERT INTO surveyQuestions (question) VALUES ("Would you drive/own a hybrid/electric car?");
+INSERT INTO surveyQuestions (question) VALUES ("Could you live in a tiny house?");
+INSERT INTO surveyQuestions (question) VALUES ("How close are you with your family?");
+INSERT INTO surveyQuestions (question) VALUES ("How do you feel about sandals?");
+INSERT INTO surveyQuestions (question) VALUES ("How do you feel about kids?");
+INSERT INTO surveyQuestions (question) VALUES ("In ten years do you see yourself in the same career/location?" );
+INSERT INTO surveyQuestions (question) VALUES ("Do you watch a lot of television?");
+INSERT INTO surveyQuestions (question) VALUES ("Are pets family?");
+INSERT INTO surveyQuestions (question) VALUES ("Are you a tattoo person?");
+INSERT INTO surveyQuestions (question) VALUES ("Do you like to read?");
