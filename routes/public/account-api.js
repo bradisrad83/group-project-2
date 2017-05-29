@@ -5,6 +5,10 @@ var jwt = require("jsonwebtoken");
 
 module.exports = function(app) {
 
+  app.get("/", function(req, res) {
+    res.render("login");
+  });
+
   app.post("/api/login", function (req, res) {
         var Username = req.body.username;
         var Password = req.body.password;
@@ -20,14 +24,14 @@ module.exports = function(app) {
             } else {
                 var token = jwt.sign({
                     data: {
-                        uId: req.body.id,
+                        uId: user.id,
                     }
                 }, 'secret', {
                     expiresIn: '12h'
                 });
                 // Console log the token
                 console.log("Token: " + token);
-                res.status(200).json({message: 'Successfully authenticated.', "token": token})
+                res.status(200).json({success: true, message: 'Successfully authenticated.', token: token})
             }
         }).catch(function (error) {
             console.log(error);
@@ -36,9 +40,6 @@ module.exports = function(app) {
     });
 
 
-  app.get("/", function(req, res) {
-    res.render("login");
-  });
 
 
   app.get("/api/account", function(req, res) {
@@ -69,14 +70,14 @@ module.exports = function(app) {
       // Create the JSON-WebToken
       var token = jwt.sign({
         data: {
-          uId: req.body.id,
+          uId: dbaccounts.id,
         }
       }, 'secret', {
         expiresIn: '12h'
       });
       // Console log the token
       console.log("Token: "+ token);
-      res.status(200).json({"dbaccounts": dbaccounts, "token": token });
+      res.status(200).json({"dbaccounts": dbaccounts, token: token });
       //console.log(dbaccounts);
     }).catch(function(error) {
       res.status(500).json(error);

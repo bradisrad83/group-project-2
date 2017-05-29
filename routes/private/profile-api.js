@@ -1,6 +1,36 @@
 var db = require("../../models/index");
 
 module.exports = function(app){
+  /**
+ * Router JWT authenticator function.
+ * If valid JWT provided, passes request to next function down.
+ * Else, invalid JWT will fail and request will not be processed.
+ */
+app.use(function(req, res, next) {
+
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+
+  if (token) {
+
+    jwt.verify(token, jwtSecret, function(err, decoded) {
+      if (err) {
+        return res.status(403).json({
+          success: false,
+          message: 'Authentication failed.'
+        });
+      } else {
+        req.decoded = decoded;
+        next();
+      }
+    });
+
+  } else {
+    return res.status(403).send({
+      success: false,
+      message: 'Please provide valid token with request.'
+    });
+  }
+});
   // Route to get all the profile and send the json to the api route
   app.get("/api/profile", function(req, res){
     db.Profile.findAll({}).then(function(dbProfile){
