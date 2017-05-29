@@ -186,25 +186,25 @@
       location: pState,
       zipCode: pZipcode,
       bio: pBio,
-      imgLink: pImgLink
-
+      imgLink: pImgLink,
+      token: localStorage.getItem('Token'),
     };
 
     console.log(profileObj);
 
 
 
-    $.ajaxPrefilter(function( options ) {
+    /*$.ajaxPrefilter(function( options ) {
      if (options.beforeSend) {
         options.beforeSend = function (xhr) {
-            xhr.setRequestHeader('Authorization', 'Bearer '+localStorage.getItem('token'));
+            xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
         }
     }
-    });
+  });*/
 
     $.ajax({
       type: 'post',
-      url: 'api/profile',
+      url: '/api/profile',
       data: profileObj,
       success: function(result) {
         console.log(result);
@@ -213,7 +213,7 @@
 
         //console.log(token);
         //localStorage.getItem('Token', token);
-        location.href = "/dashboard";
+        location.href = "/dashboard/:herewego";
       }
     }); //close ajax
 
