@@ -51,7 +51,7 @@ module.exports = function(app) {
         username: req.params.username
       }
     }).then(function(dbaccounts){
-      console.log("Id in the Table: " + dbaccounts.dataValues.id);
+      //console.log("Id in the Table: " + dbaccounts.dataValues.id);
 
       res.render("dashboard");
     });

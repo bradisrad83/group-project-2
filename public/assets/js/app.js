@@ -48,13 +48,13 @@ $(document).ready(function() {
           console.log(result);
           // Save the token to a variable
           token = result.token;
-          console.log("^^^^^^^^^^token^^^^^^^^^^");
-          console.log(token);
-          console.log("^^^^^^^^^^^^^^^^^^^^^^^^^");
+          console.log("--------------username-----------");
+          console.log(rName);
+          console.log("--------------username-----------");
           localStorage.setItem('Token', token);
           //sessionStorage.setItem('Token', token);
           $('#registerForm')[0].reset();
-          location.href = "/dashboard";
+          location.href = "/dashboard/:username";
         },
         error: function(error) {
 
