@@ -33,10 +33,9 @@ app.set("view engine", "handlebars");
 //=================================
 //      Routes
 //================================
+require("./routes/public/account-api.js")(app);
+require("./routes/private/profile-api.js")(app);
 
-require("./controllers/profile-api.js")(app);
-require("./controllers/account-api.js")(app);
-require("./controllers/liked-api.js")(app);
 //require("./controller/profile.js")(app)
 
 
