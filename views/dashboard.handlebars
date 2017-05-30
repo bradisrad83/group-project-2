@@ -4,14 +4,14 @@
 
   <div class="row">
     <div class="col-md-4 text-center">
-      <a href="/profile">
+      <div class="openProfile">
         <figure>
           <div class="img-wrapper">
             <img class="dashIcon img-responsive" src="../assets/img/profile-mono-a.png" alt="Profile Icon">
             <figcaption class="iconText" >Edit/Submit<br>Profile</figcaption>
           </div>
         </figure>
-      </a>
+      </div>
     </div>
 
     <div class="col-md-4 text-center">
@@ -63,6 +63,176 @@
 
 </div><!--/container-->
 
+<!-- Profil Modal -->
+<div id="profileModal" class="modal fade"  tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="profile-header" >
+            </div>
+            <div class="modal-body">
+              <div class="container profile-form">
+
+                  <form class="form-horizontal" action="/api/profile" method="post"  id="profileForm">
+              <fieldset>
+
+              <!-- Form Name -->
+              <legend>Profile</legend>
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">First Name</label>
+                <div class="col-md-8 inputGroupContainer">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  id="prof-firstname" name="firstName" placeholder="First Name" class="form-control"  type="text">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label" >Last Name</label>
+                  <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="prof-lastname" name="lastName" placeholder="Last Name" class="form-control"  type="text">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Select Basic -->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">State</label>
+                  <div class="col-md-8 selectContainer">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                  <select id="location" name="location" class="form-control selectpicker" >
+                    <option value=" " >Please select your state</option>
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option >Arizona</option>
+                    <option >Arkansas</option>
+                    <option >California</option>
+                    <option >Colorado</option>
+                    <option >Connecticut</option>
+                    <option >Delaware</option>
+                    <option >District of Columbia</option>
+                    <option> Florida</option>
+                    <option >Georgia</option>
+                    <option >Hawaii</option>
+                    <option >daho</option>
+                    <option >Illinois</option>
+                    <option >Indiana</option>
+                    <option >Iowa</option>
+                    <option> Kansas</option>
+                    <option >Kentucky</option>
+                    <option >Louisiana</option>
+                    <option>Maine</option>
+                    <option >Maryland</option>
+                    <option> Mass</option>
+                    <option >Michigan</option>
+                    <option >Minnesota</option>
+                    <option>Mississippi</option>
+                    <option>Missouri</option>
+                    <option>Montana</option>
+                    <option>Nebraska</option>
+                    <option>Nevada</option>
+                    <option>New Hampshire</option>
+                    <option>New Jersey</option>
+                    <option>New Mexico</option>
+                    <option>New York</option>
+                    <option>North Carolina</option>
+                    <option>North Dakota</option>
+                    <option>Ohio</option>
+                    <option>Oklahoma</option>
+                    <option>Oregon</option>
+                    <option>Pennsylvania</option>
+                    <option>Rhode Island</option>
+                    <option>South Carolina</option>
+                    <option>South Dakota</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option> Uttah</option>
+                    <option>Vermont</option>
+                    <option>Virginia</option>
+                    <option >Washington</option>
+                    <option >West Virginia</option>
+                    <option>Wisconsin</option>
+                    <option >Wyoming</option>
+                  </select>
+                </div>
+              </div>
+              </div>
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Zip Code</label>
+                  <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                <input id="prof-zipcode" name="zipCode" placeholder="Zip Code" class="form-control"  type="text">
+                  </div>
+              </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label">Link to profile image</label>
+                 <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                <input id="prof-image" name="imgLink" placeholder="Website or domain name" class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <!-- radio checks -->
+               <div class="form-group">
+                                      <label class="col-md-4 control-label">Sex</label>
+                                      <div class="col-md-4">
+                                          <div class="radio">
+                                              <label>
+                                                  <input type="radio" name="sex" value="male" /> Male
+                                              </label>
+                                          </div>
+                                          <div class="radio">
+                                              <label>
+                                                  <input type="radio" name="sex" value="female" /> Female
+                                              </label>
+                                          </div>
+                                      </div>
+                                  </div>
+
+              <!-- Text area -->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Biography</label>
+                  <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                      	<textarea id="prof-bio" class="form-control" name="bio" placeholder="Tell us about yourself"></textarea>
+                </div>
+                </div>
+              </div>
+
+              </fieldset>
+              </form>
+              </div>
+                  </div><!-- /.container -->
+            </div>
+            <div class="profile-footer modal-footer">
+                <button type="button" id="exit" class="toggleModalBtn btn-lg btn-secondary" data-toggle="modal" data-target="profileModal" data-dismiss="modal">EXIT</button>
+                <button type="submit" form="profileForm" value="Submit" id="profileSubmitBtn" class="submitBtn btn-lg btn-secondary" data-dismiss="modal">SUBMIT</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
@@ -84,5 +254,48 @@
                 location.href = "/";
             }
         });
+
+
+        $('.openProfile').click(function () {
+            $('#profileModal').modal('show');
+        });
+
+
+        $('#profileSubmitBtn').click( function() {
+          var pFirstName = $('#prof-firstname').val().trim();
+          var pLastName = $('#prof-lastname').val().trim();
+          var pState = $('#prof-state').val();
+          var pZipcode = $('#prof-zipcode').val().trim();
+          var pBio = $('#prof-bio').val().trim();
+          var pImgLink = $('#prof-image').val().trim();
+          var pSex = $('input[name=sex]:checked').val().trim();
+
+          var profileObj = {
+            firstName: pFirstName,
+            lastName: pLastName,
+            sex: pSex,
+            location: pState,
+            zipCode: pZipcode,
+            bio: pBio,
+            imgLink: pImgLink,
+            //token: localStorage.getItem('Token'),
+          };
+
+          $.ajax({
+            type: 'post',
+            url: '/api/profile',
+            data: profileObj,
+            success: function(result) {
+              var token = result.token;
+
+              console.log("Token ", token);
+              localStorage.setItem('Token', token);
+              $('#profileForm')[0].reset();
+
+            }
+          }); //close ajax
+
+      });//close registerbtn click function
+
     });
 </script>

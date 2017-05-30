@@ -68,7 +68,7 @@ body {
   background-repeat: no-repeat;
   background-color: #dcc7aa;
   color: #6b7a87;
-  border-bottom: : 2px solid #ea8737;
+  border-bottom: 2px solid #ea8737;
   border-right: 2px solid #ea8737;
   border-left: 2px solid #ea8737;
 }
@@ -178,10 +178,18 @@ body {
     ----- 4. Profile styles-------
     ------------------------------
 */
+.profile-form{
+  width: 100%
+}
 
 .input-group-addon {
   background-color: #ea8737;
   color: #fff;
+}
+
+#profile-header {
+  background-image: url(../img/profile-modal-header.jpg);
+  background-size: 80%;
 }
 
 /*
