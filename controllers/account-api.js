@@ -43,12 +43,21 @@ module.exports = function(app) {
   });
 
   app.get("/questions", function(req, res) {
-    db.surveyQuestions.findAll({}).then(function(dbsurveyQuestions) {
-      //console.log(dbsurveyQuestions);
+    db.surveyQuestions.findAll({
+      where: {
+        SurveyId: 1
+      },
+      include: [{
+        model: db.surveyAnswers
+      }]
+    }).then(function(dbsurveyQuestions) {
+
+      console.log(dbsurveyQuestions.surveyAnswers);
       res.render("questions", {
         questions: dbsurveyQuestions
       });
     });
+
   });
 
   app.get("/", function(req, res) {

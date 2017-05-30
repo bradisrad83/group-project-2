@@ -10,6 +10,11 @@ module.exports = function(sequelize, DataTypes) {
         surveyQuestions.hasOne(models.surveyAnswers, {
           onDelete: "cascade"
         });
+        surveyQuestions.belongsTo(models.Surveys, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
     }
   });
