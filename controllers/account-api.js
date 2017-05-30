@@ -48,7 +48,8 @@ module.exports = function(app) {
         SurveyId: 1
       },
       include: [{
-        model: db.surveyAnswers
+        model: db.surveyAnswers,
+        where: 
       }]
     }).then(function(dbsurveyQuestions) {
 
