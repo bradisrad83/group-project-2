@@ -1,4 +1,5 @@
 var db = require("../../models/index");
+var jwt = require("jsonwebtoken");
 // Json Webtoken
 
 const jwtSecret = process.env.JWT_SECRET || 'secret';
@@ -65,5 +66,10 @@ module.exports = function (app) {
 
     app.get('/dashboard', function(req, res) {
         res.render('dashboard');
-    })
+    });
+
+    app.get('/profile', function(req, res) {
+        res.render('profile');
+    });
+
 };
