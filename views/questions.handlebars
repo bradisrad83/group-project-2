@@ -5,7 +5,7 @@
 
     <legend>Survey</legend>
     {{#each questions}}
-      <div class="questionBlock form-group">
+      <div id="{{id}}" class="questionBlock form-group">
         <label><h4>{{question}}</h4></label>
         <select data-placeholder="" class="form-control qForm">
             {{#each surveyAnswers}}
@@ -38,6 +38,13 @@ $("#surveySubmit").on("click", function(){
 	// If all required fields are filled
 	if (validateForm()) {
       //add some code to post the answer array to the profile table?
+      var answers = [];
+
+      $('.qForm').each(function() {
+        answers.push($(this).find('option:selected').val());
+      });
+      console.log(answers);
+
   }
   else
   {
