@@ -3,7 +3,7 @@
 module.exports = function(sequelize, DataTypes) {
   var submittedAnswers = sequelize.define("submittedAnswers", {
       userAnswer: {
-        type: DataTypes.STRING,
+        type: DataTypes.JSON,
         allowNull: false
       }
     }, {

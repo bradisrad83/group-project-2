@@ -49,6 +49,12 @@ $("#surveySubmit").on("click", function(){
          method: "POST",
          data: {
            answer: answers
+         },
+         success: function(res){
+           console.log(res);
+         },
+         error: function(err){
+           console.log(err);
          }
        }).done(function(data){
          if(data.success === true){
