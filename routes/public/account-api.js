@@ -27,7 +27,7 @@ module.exports = function (app) {
 
                 var token = jwt.sign({
                     data: {
-                        uid: req.body.id
+                        uid: user.id
                     }
                 }, 'secret', {
                     expiresIn: '12h'

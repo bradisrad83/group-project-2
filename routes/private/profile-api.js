@@ -22,7 +22,11 @@ app.use(function(req, res, next) {
           message: 'Authentication failed.'
         });
       } else {
+        console.log("Decoding");
         req.decoded = decoded;
+        console.log(req.decoded.data);
+        console.log("UID: " + req.decoded.data.uid);
+
         next();
       }
     });
@@ -40,6 +44,18 @@ app.use(function(req, res, next) {
   //     res.json(dbProfile);
   //   });
   // });
+  app.get("/api/dashboard", function(req, res) {
+    db.Account.findOne({
+      where:{
+        username: req.query.uid
+      }
+    }).then(function(dbaccounts){
+      //console.log("Id in the Table: " + dbaccounts.dataValues.id);
+
+      res.render("dashboard");
+    });
+
+  });
   // // Route to post the new profile to the table
   app.post("/api/profile/", function(req, res){
     console.log(req.body);
@@ -50,30 +66,22 @@ app.use(function(req, res, next) {
       location: req.body.location,
       zipCode: req.body.zipCode,
       bio: req.body.bio,
-      imgLink: req.body.imgLink
+      imgLink: req.body.imgLink,
+      AccountId: req.decoded.data.uid
   }).then(function(dbProfile){
+      console.log("api/profile then");
       res.json(dbProfile);
     // Catch the error and display it on the console
     }).catch(function(error) {
+      console.log("api/profile error ");
       console.log(error);
       res.status(500).json(error);
     });
   });
-  app.get("/api/dashboard", function(req, res) {
-    db.Account.findOne({
-      where:{
-        username: req.query.username
-      }
-    }).then(function(dbaccounts){
-      //console.log("Id in the Table: " + dbaccounts.dataValues.id);
 
-      res.render("dashboard");
-    });
 
-  });
-
-  app.get("/profile", function(req,res) {
-    res.render("profile");
-  });
+  // app.get("/profile", function(req,res) {
+  //   res.render("profile");
+  // });
 
 };
