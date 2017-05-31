@@ -19,12 +19,16 @@ module.exports = function(app) {
         model: db.surveyAnswers
       }]
     }).then(function(dbsurveyQuestions) {
-      //res.json(dbsurveyQuestions);
          res.render("questions", {
          questions: dbsurveyQuestions
        });
     });
 
+  });
+
+  app.post("/questions/submit", function(req, res) {
+    console.log("hitting route");
+    console.log(req.body);
   });
 
   app.post("/login", function(req, res) {

@@ -44,7 +44,14 @@ $("#surveySubmit").on("click", function(){
         answers.push($(this).find('option:selected').val());
       });
       console.log(answers);
-
+      // $.ajax({
+      //   url: "/questions/submit",
+      //   method: "POST",
+      //   data: answers
+      // }).done(function(answers){
+      //   if(answers.success === true){
+      //     console.log(answers);
+      // });
   }
   else
   {
