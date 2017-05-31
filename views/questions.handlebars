@@ -50,7 +50,10 @@ $("#surveySubmit").on("click", function(){
          data: {
            answer: answers
          }
-       }).done(function(answers){
+       }).done(function(data){
+         if(data.success === true){
+           console.log("success");
+         }
        });
      }
    else

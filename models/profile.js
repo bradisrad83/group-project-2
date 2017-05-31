@@ -49,10 +49,6 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         isUrl: true //will make sure it is a link
       }
-    },
-    surveyResults: {
-      type: DataTypes.STRING,
-      allowNull: true
     }
   }, {
     classMethods: {

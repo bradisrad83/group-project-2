@@ -10,25 +10,6 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("/questions", function(req, res) {
-    db.surveyQuestions.findAll({
-      where: {
-        SurveyId: 1
-      },
-      include: [{
-        model: db.surveyAnswers
-      }]
-    }).then(function(dbsurveyQuestions) {
-         res.render("questions", {
-         questions: dbsurveyQuestions
-       });
-    });
-
-  });
-
-  app.post("/questions/submit", function(req, res) {
-    console.log(req.body);
-  });
 
   app.post("/login", function(req, res) {
     var Username = req.body.username;
@@ -54,8 +35,9 @@ module.exports = function(app) {
         }, 'secret', {
           expiresIn: '12h'
         });
+        res.set("Set-Cookie", `token=${token}`);
         // Console log the token
-        console.log("Token: " + token);
+        //console.log("Token: " + token);
         res.status(200).json({
           message: 'Successfully authenticated.',
           "token": token
@@ -83,6 +65,7 @@ module.exports = function(app) {
       }, jwtSecret, {
         expiresIn: '12h'
       });
+      res.set("Set-Cookie", `token=${token}`);
       // Send the json object to the app.js
       res.status(200).json({
         "dbaccounts": dbaccounts,

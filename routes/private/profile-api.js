@@ -13,7 +13,7 @@ module.exports = function (app) {
 
     app.use(function (req, res, next) {
 
-        var token = req.body.token || req.query.token;
+        var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.cookies.token;
         console.log('app.use', token);
 
         if (token) {
