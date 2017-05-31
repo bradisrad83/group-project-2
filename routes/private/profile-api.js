@@ -10,8 +10,11 @@ module.exports = function(app){
  * Else, invalid JWT will fail and request will not be processed.
  */
 app.use(function(req, res, next) {
+        // var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.cookies.token;
+        // console.log('app.use', token);
 
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
+
 
   if (token) {
 

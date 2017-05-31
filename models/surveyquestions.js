@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        surveyQuestions.hasOne(models.surveyAnswers, {
+        surveyQuestions.hasMany(models.surveyAnswers, {
           onDelete: "cascade"
         });
         surveyQuestions.belongsTo(models.Surveys, {

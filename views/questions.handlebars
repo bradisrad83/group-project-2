@@ -5,16 +5,14 @@
 
     <legend>Survey</legend>
     {{#each questions}}
-      <div class="questionBlock form-group">
+      <div id="{{id}}" class="questionBlock form-group">
         <label><h4>{{question}}</h4></label>
-        <select id="{{qId}}" data-placeholder="" class="form-control qForm">
-          <option value=""></option>
-          <option value="1">{{answer1}}</option>
-          <option value="2">{{answer2}}</option>
-          <option value="3">{{answer3}}</option>
-          <option value="4">{{answer4}}</option>
-          <option value="5">{{answer5}}</option>
+        <select data-placeholder="" class="form-control qForm">
+            {{#each surveyAnswers}}
+              <option value="{{value}}">{{body}}</option>
+            {{/each}}
         </select>
+
       </div>
     {{/each}}
     <!-- Submit Button -->
@@ -40,13 +38,35 @@ $("#surveySubmit").on("click", function(){
 	// If all required fields are filled
 	if (validateForm()) {
       //add some code to post the answer array to the profile table?
-  }
-  else
+      var answers = [];
+
+      $('.qForm').each(function() {
+        answers.push($(this).find('option:selected').val());
+      });
+      console.log(answers);
+       $.ajax({
+         url: "/questions/submit",
+         method: "POST",
+         data: {
+           answer: answers
+         },
+         success: function(res){
+           console.log(res);
+         },
+         error: function(err){
+           console.log(err);
+         }
+       }).done(function(data){
+         if(data.success === true){
+           console.log("success");
+         }
+       });
+     }
+   else
   {
     alert("Please fill out all fields before submitting!");
   }
 
   return false;
-
 });
 </script>
