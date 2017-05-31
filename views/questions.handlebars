@@ -7,14 +7,12 @@
     {{#each questions}}
       <div class="questionBlock form-group">
         <label><h4>{{question}}</h4></label>
-        <select id="{{qId}}" data-placeholder="" class="form-control qForm">
-          <option value=""></option>
-          <option value="1">{{answer1}}</option>
-          <option value="2">{{answer2}}</option>
-          <option value="3">{{answer3}}</option>
-          <option value="4">{{answer4}}</option>
-          <option value="5">{{answer5}}</option>
+        <select data-placeholder="" class="form-control qForm">
+            {{#each surveyAnswers}}
+              <option value="{{value}}">{{body}}</option>
+            {{/each}}
         </select>
+
       </div>
     {{/each}}
     <!-- Submit Button -->

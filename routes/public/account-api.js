@@ -4,72 +4,99 @@ var jwt = require("jsonwebtoken");
 
 const jwtSecret = process.env.JWT_SECRET || 'secret';
 
-module.exports = function (app) {
+module.exports = function(app) {
 
-    app.get("/", function (req, res) {
-        res.render("index");
+  app.get("/", function(req, res) {
+    res.render("index");
+  });
+
+  app.get("/questions", function(req, res) {
+    db.surveyQuestions.findAll({
+      where: {
+        SurveyId: 1
+      },
+      include: [{
+        model: db.surveyAnswers
+      }]
+    }).then(function(dbsurveyQuestions) {
+      //res.json(dbsurveyQuestions);
+         res.render("questions", {
+         questions: dbsurveyQuestions
+       });
     });
 
-    app.post("/login", function (req, res) {
-        var Username = req.body.username;
-        var Password = req.body.password;
-        console.log(Username);
-        console.log(Password);
+  });
 
-        db.Account.findOne({
-            where: {
-                username: Username
-            }
-        }).then(function (user) {
-            if (!user || !db.Account.validPassword(Password, user.password)) {
-                res.status(401).json({ message: 'Incorrect username or password' })
-            } else {
+  app.post("/login", function(req, res) {
+    var Username = req.body.username;
+    var Password = req.body.password;
+    console.log(Username);
+    console.log(Password);
 
-                var token = jwt.sign({
-                    data: {
-                        uid: req.body.id
-                    }
-                }, 'secret', {
-                    expiresIn: '12h'
-                });
-                // Console log the token
-                console.log("Token: " + token);
-                res.status(200).json({ message: 'Successfully authenticated.', "token": token })
-            }
-        }).catch(function (error) {
-            console.log(error);
-            res.status(500).json({ message: 'Internal server error' })
+    db.Account.findOne({
+      where: {
+        username: Username
+      }
+    }).then(function(user) {
+      if (!user || !db.Account.validPassword(Password, user.password)) {
+        res.status(401).json({
+          message: 'Incorrect username or password'
         })
-    });
+      } else {
 
-    app.post("/signup", function (req, res) {
-        db.Account.create({
-            username: req.body.username,
-            password: db.Account.generateHash(req.body.password),
-            email: req.body.email,
-        }).then(function (dbaccounts) {
-            // Create the JSON-WebToken
-            var token = jwt.sign({
-                data: {
-                    uid: dbaccounts.id
-                }
-            }, jwtSecret, {
-                expiresIn: '12h'
-            });
-            // Send the json object to the app.js
-            res.status(200).json({ "dbaccounts": dbaccounts, "token": token });
-        }).catch(function (error) {
-            res.status(500).json(error);
+        var token = jwt.sign({
+          data: {
+            uid: req.body.id
+          }
+        }, 'secret', {
+          expiresIn: '12h'
         });
-        //}
-    });
+        // Console log the token
+        console.log("Token: " + token);
+        res.status(200).json({
+          message: 'Successfully authenticated.',
+          "token": token
+        })
+      }
+    }).catch(function(error) {
+      console.log(error);
+      res.status(500).json({
+        message: 'Internal server error'
+      })
+    })
+  });
 
-    app.get('/dashboard', function(req, res) {
-        res.render('dashboard');
+  app.post("/signup", function(req, res) {
+    db.Account.create({
+      username: req.body.username,
+      password: db.Account.generateHash(req.body.password),
+      email: req.body.email,
+    }).then(function(dbaccounts) {
+      // Create the JSON-WebToken
+      var token = jwt.sign({
+        data: {
+          uid: dbaccounts.id
+        }
+      }, jwtSecret, {
+        expiresIn: '12h'
+      });
+      // Send the json object to the app.js
+      res.status(200).json({
+        "dbaccounts": dbaccounts,
+        "token": token
+      });
+    }).catch(function(error) {
+      res.status(500).json(error);
     });
+    //}
+  });
 
-    app.get('/profile', function(req, res) {
-        res.render('profile');
-    });
+  app.get('/dashboard', function(req, res) {
+    res.render('dashboard');
+  });
+
+  app.get('/profile', function(req, res) {
+    res.render('profile');
+  });
 
 };
