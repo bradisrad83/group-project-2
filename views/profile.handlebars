@@ -3,7 +3,7 @@
 
 <div class="container profile-form">
 
-    <form class="well form-horizontal" action="/api/profile" method="post"  id="contact_form">
+    <form class="well form-horizontal" id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -154,7 +154,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button id="profileBtn" type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+    <button id="profileBtn" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
 
@@ -170,10 +170,12 @@
 
 <script type="text/javascript">
 
-  $('#profileBtn').click( function() {
+  $('#profileBtn').click( function(e) {
+    e.preventDefault();
+    console.log('CLICKING BUTTON');
     var pFirstName = $('#prof-firstname').val().trim();
     var pLastName = $('#prof-lastname').val().trim();
-    var pState = $('#prof-state').val().trim();
+    var location = $('#location').val().trim();
     var pZipcode = $('#prof-zipcode').val().trim();
     var pBio = $('#prof-bio').val().trim();
     var pImgLink = $('#prof-image').val().trim();
@@ -183,11 +185,11 @@
       firstName: pFirstName,
       lastName: pLastName,
       sex: pSex,
-      location: pState,
+      location: location,
       zipCode: pZipcode,
       bio: pBio,
       imgLink: pImgLink,
-      token: localStorage.getItem('Token'),
+      token: localStorage.getItem('token'),
     };
 
     console.log(profileObj);
@@ -201,19 +203,26 @@
         }
     }
   });*/
-
     $.ajax({
       type: 'post',
       url: '/api/profile',
       data: profileObj,
+      async : false,
       success: function(result) {
-        console.log(result);
+        console.log('succes', result);
         // Save the token to a variable
         //token = result.token;
 
         //console.log(token);
         //localStorage.getItem('Token', token);
-        location.href = "/dashboard/:herewego";
+        console.log("Before dashboard");
+        window.location.href = "/dashboard";
+        //console.log("succes");
+      },
+      error: function (error) {
+          console.log(error);
+          debugger;
+          location.href = "/";
       }
     }); //close ajax
 
