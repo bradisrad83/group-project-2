@@ -27,7 +27,6 @@ module.exports = function(app) {
   });
 
   app.post("/questions/submit", function(req, res) {
-    console.log("hitting route");
     console.log(req.body);
   });
 

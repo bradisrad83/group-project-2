@@ -44,21 +44,20 @@ $("#surveySubmit").on("click", function(){
         answers.push($(this).find('option:selected').val());
       });
       console.log(answers);
-      // $.ajax({
-      //   url: "/questions/submit",
-      //   method: "POST",
-      //   data: answers
-      // }).done(function(answers){
-      //   if(answers.success === true){
-      //     console.log(answers);
-      // });
-  }
-  else
+       $.ajax({
+         url: "/questions/submit",
+         method: "POST",
+         data: {
+           answer: answers
+         }
+       }).done(function(answers){
+       });
+     }
+   else
   {
     alert("Please fill out all fields before submitting!");
   }
 
   return false;
-
 });
 </script>
