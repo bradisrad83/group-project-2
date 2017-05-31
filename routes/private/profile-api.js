@@ -69,8 +69,8 @@ app.use(function(req, res, next) {
       imgLink: req.body.imgLink,
       AccountId: req.decoded.data.uid
   }).then(function(dbProfile){
-      console.log("api/profile then");
-      res.json(dbProfile);
+      // console.log("api/profile then");
+      res.json({dbProfile, success: true});
     // Catch the error and display it on the console
     }).catch(function(error) {
       console.log("api/profile error ");

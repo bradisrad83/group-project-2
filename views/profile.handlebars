@@ -203,19 +203,20 @@
         }
     }
   });*/
-
     $.ajax({
       type: 'post',
       url: '/api/profile',
       data: profileObj,
+      async : false,
       success: function(result) {
-        console.log(result);
+        console.log('succes', result);
         // Save the token to a variable
         //token = result.token;
 
         //console.log(token);
         //localStorage.getItem('Token', token);
-        location.href = "/dashboard/";
+        console.log("Before dashboard");
+        window.location.href = "/dashboard";
         //console.log("succes");
       },
       error: function (error) {
