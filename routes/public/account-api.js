@@ -37,6 +37,9 @@ module.exports = function(app) {
           message: 'Incorrect username or password'
         });
       } else {
+      console.log(user);
+      console.log("_____________");
+      console.log(req.body);
 
         //             var token = jwt.sign({
         //                 data: {
@@ -57,7 +60,7 @@ module.exports = function(app) {
 
         var token = jwt.sign({
           data: {
-            uid: req.body.id
+            uid: user.id
           }
         }, 'secret', {
           expiresIn: '12h'
@@ -85,6 +88,7 @@ module.exports = function(app) {
       email: req.body.email,
     }).then(function(dbaccounts) {
       // Create the JSON-WebToken
+      console.log(dbaccounts);
       var token = jwt.sign({
         data: {
           uid: dbaccounts.id

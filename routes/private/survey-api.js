@@ -24,7 +24,6 @@ module.exports = function(app) {
     db.submittedAnswers.create({
       userAnswer: req.body,
       ProfileId: req.decoded.data.uid
-    //  ProfileId: req.decoded.data.uid
     }).then(function(dbsubmittedanswers){
       res.json(dbsubmittedanswers);
     }).catch(function(err){
