@@ -6,7 +6,6 @@ module.exports = {
       id: 1,
       body: "You know your buddy is a drinker and don't answer the phone",
       value: 1,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 1
@@ -14,7 +13,6 @@ module.exports = {
       id: 2,
       body: "You answer the phone but make up an excuse.",
       value: 2,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 1
@@ -22,7 +20,6 @@ module.exports = {
       id: 3,
       body: "You go out but only for a drink or two beer.",
       value: 3,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 1
@@ -30,7 +27,6 @@ module.exports = {
       id: 4,
       body: "You go and you're in it for the long haul.",
       value: 4,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 1
@@ -38,7 +34,6 @@ module.exports = {
       id: 5,
       body: "You go out, drink all night, and pay the entire tab.",
       value: 5,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 1
@@ -46,7 +41,6 @@ module.exports = {
       id: 6,
       body: "Not a chance, I don't even own a jacket.",
       value: 1,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 2
@@ -54,7 +48,6 @@ module.exports = {
       id: 7,
       body: "I love seeing it on the internet and TV.",
       value: 2,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 2
@@ -62,7 +55,6 @@ module.exports = {
       id: 8,
       body: "I don't mind seeing it on vacation but prefer not to live in it.",
       value: 3,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 2
@@ -70,7 +62,6 @@ module.exports = {
       id: 9,
       body: "Yes please",
       value: 4,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 2
@@ -78,7 +69,6 @@ module.exports = {
       id: 10,
       body: "I love it and want a blizzard every other weekend",
       value: 5,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 2
@@ -86,7 +76,6 @@ module.exports = {
       id: 11,
       body: "Turn that crap off now!!!!",
       value: 1,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 3
@@ -94,7 +83,6 @@ module.exports = {
       id: 12,
       body: "I guess if there is nothing better on",
       value: 2,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 3
@@ -102,7 +90,6 @@ module.exports = {
       id: 13,
       body: "As long as it's not gory and disgusting, we're good",
       value: 3,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 3
@@ -210,7 +197,7 @@ module.exports = {
       value: 3,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-      SurveyId:
+      SurveyId: 6
     }, {
       id: 29,
       body: "Of course",
@@ -264,7 +251,6 @@ module.exports = {
       id: 36,
       body: "Oh no I'm not the outdoorsy type at all",
       value: 1,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 8
@@ -272,7 +258,6 @@ module.exports = {
       id: 37,
       body: "As long as it doesn't involve climbing",
       value: 2,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 8
@@ -280,14 +265,13 @@ module.exports = {
       id: 38,
       body: "Sounds fun, I'll give it a try",
       value: 3,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 8
     }, {
-      id: 39 "What a fun idea, I'm game",
+      id: 39,
+      body: "What a fun idea, I'm game",
       value: 4,
-      ,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 8
@@ -501,6 +485,7 @@ module.exports = {
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       SurveyId: 14
+    }, {
       id: 70,
       body: "I don't even own shows, sandals all the way",
       value: 5,
