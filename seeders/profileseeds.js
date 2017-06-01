@@ -1,8 +1,3 @@
-USE dating_db;
-
-ALTER TABLE `profiles` MODIFY COLUMN `createdAt` DATETIME NOT NULL DEFAULT NOW();
-ALTER TABLE `profiles` MODIFY COLUMN `updatedAt` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW();
-
 INSERT INTO profiles (firstName, lastName, sex, location, zipcode, bio, imgLink, AccountId) VALUES ("brad", "sever", "male", "Florida", "32801", "add dummy bio", "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/brad.jpg", 1);
 INSERT INTO profiles (firstName, lastName, sex, location, zipcode, bio, imgLink, AccountId) VALUES ("brian", "pine", "male", "Florida", "32807", "add dummy bio", "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/brian.jpg", 2);
 INSERT INTO profiles (firstName, lastName, sex, location, zipcode, bio, imgLink, AccountId) VALUES ("chris", "cruise", "male", "Florida", "32809", "add dummy bio", "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/chris.jpg", 3);

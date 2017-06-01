@@ -1,7 +1,4 @@
-use dating_db;
 
-ALTER TABLE `surveyAnswers` MODIFY COLUMN `createdAt` DATETIME NOT NULL DEFAULT NOW();
-ALTER TABLE `surveyAnswers` MODIFY COLUMN `updatedAt` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW();
 
 INSERT INTO surveyAnswers (body, value, surveyQuestionId) VALUES ("You know your buddy is a drinker and don't answer the phone", 1, 1);
 INSERT INTO surveyAnswers (body, value, surveyQuestionId) VALUES ("You answer the phone but make up an excuse.", 2, 1);
