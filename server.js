@@ -12,7 +12,7 @@ var validator = require('express-validator');
 var db = require("./models");
 
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8082;
 
 app.use(express.static(__dirname + "/public"));
 
