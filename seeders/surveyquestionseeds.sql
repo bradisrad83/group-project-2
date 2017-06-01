@@ -1,3 +1,5 @@
+use dating_db;
+
 ALTER TABLE `surveyQuestions` MODIFY COLUMN `createdAt` DATETIME NOT NULL DEFAULT NOW();
 ALTER TABLE `surveyQuestions` MODIFY COLUMN `updatedAt` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW();
 

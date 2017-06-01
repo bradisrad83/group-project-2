@@ -5,14 +5,14 @@ var mysql = require("mysql");
 var methodOverride = require("method-override");
 var sequelize = require("sequelize");
 var bcrypt = require('bcrypt');
-var cookieParser = require ('cookie-parser');
+var cookieParser = require('cookie-parser');
 
 var validator = require('express-validator');
 
 var db = require("./models");
 
 var app = express();
-var PORT = process.env.PORT || 8082;
+var PORT = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + "/public"));
 
@@ -41,9 +41,6 @@ require("./routes/private/survey-api.js")(app);
 //require("./controller/profile.js")(app)
 
 
-
-db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log(`App running on port: ${PORT}`);
   });
-});
