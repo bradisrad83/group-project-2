@@ -22,7 +22,9 @@ module.exports = function(app) {
   app.post("/questions/submit", function(req, res) {
     console.log(req.body);
     db.submittedAnswers.create({
-      userAnswer: req.body
+      userAnswer: req.body,
+      ProfileId: req.decoded.data.uid
+    //  ProfileId: req.decoded.data.uid
     }).then(function(dbsubmittedanswers){
       res.json(dbsubmittedanswers);
     }).catch(function(err){
