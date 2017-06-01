@@ -5,7 +5,7 @@ module.exports = {
     queryInterface.createTable("Surveys", {
       id: {
         type: Sequelize.INTEGER,
-        primarykey: true,
+        primaryKey: true,
         autoIncrement: true
       },
       title: {
