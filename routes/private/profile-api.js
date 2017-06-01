@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
         // var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.cookies.token;
         // console.log('app.use', token);
 
-  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+  var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.cookies.token;
 
 
   if (token) {

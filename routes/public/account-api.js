@@ -53,7 +53,7 @@ module.exports = function(app) {
         //         console.log(error);
         //         res.status(500).json({ message: 'Internal server error' });
         //     });
-        // });>>>>>> master
+        // });
 
         var token = jwt.sign({
           data: {
