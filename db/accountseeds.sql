@@ -1,7 +1,7 @@
 USE dating_db;
 
-ALTER TABLE `accounts` MODIFY COLUMN `createdAt` DATETIME NOT NULL DEFAULT NOW();
-ALTER TABLE `accounts` MODIFY COLUMN `updatedAt` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW();
+ALTER TABLE `accounts` MODIFY COLUMN `created_at` DATETIME NOT NULL DEFAULT NOW();
+ALTER TABLE `accounts` MODIFY COLUMN `updated_at` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW();
 
 INSERT INTO accounts (username, password, email) VALUES ("brad", "$2a$08$0GC42meg9rebqGfcgfu3h.KGeGH/42ez.1mxZw/6VDf0GvXCgvcpy", "brad@brad.com");
 INSERT INTO accounts (username, password, email) VALUES ("brian", "$2a$08$0GC42meg9rebqGfcgfu3h.KGeGH/42ez.1mxZw/6VDf0GvXCgvcpy", "brian@brian.com");
