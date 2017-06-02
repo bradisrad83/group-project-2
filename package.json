@@ -4,6 +4,8 @@
   "description": "UCF Coding Bootcamp group project 2",
   "main": "server.js",
   "scripts": {
+    "db-up": "sequelize db:migrate; sequelize db:seed:all",
+    "db-down": "sequelize db:seed:undo:all; sequelize db:migrate:undo:all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "sequelize db:migrate && node server.js",
     "start": "sequelize db:migrate && node server.js"
@@ -29,6 +31,9 @@
     "method-override": "^2.3.8",
     "mysql": "^2.13.0",
     "sequelize": "^3.30.4",
+    "sequelize-cli": "^2.7.0"
+  },
+  "devDependencies": {
     "sequelize-cli": "^2.7.0"
   }
 }

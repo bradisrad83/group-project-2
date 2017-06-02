@@ -1,5 +1,5 @@
-ALTER TABLE `surveyQuestions` MODIFY COLUMN `createdAt` DATETIME NOT NULL DEFAULT NOW();
-ALTER TABLE `surveyQuestions` MODIFY COLUMN `updatedAt` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW();
+ALTER TABLE `surveyQuestions` MODIFY COLUMN `created_at` DATETIME NOT NULL DEFAULT NOW();
+ALTER TABLE `surveyQuestions` MODIFY COLUMN `updated_at` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW();
 
 INSERT INTO surveyQuestions (question, SurveyId) VALUES ("Your friend calls and says let's go grab a beer.  What do you do?", 1);
 INSERT INTO surveyQuestions (question, SurveyId) VALUES ("How do you feel about snow, and winter in general?", 1);
