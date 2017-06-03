@@ -10,12 +10,12 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           submittedAnswers.belongsTo(models.Profile, {
-            foreignKey: {
+            foreignKey: 'ProfileId',
               allowNull: true
-            }
           });
         }
-      }
+      },
+      underscored: true,
     });
   return submittedAnswers;
 };

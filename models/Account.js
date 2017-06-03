@@ -35,17 +35,6 @@ module.exports = function(sequelize, DataTypes) {
                 }
             }
         },
-        // {
-        //     instanceMethods: {
-        //         generateHash: function (password) {
-        //             return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-        //         },
-        //         validPassword: function (password) {
-        //             return bcrypt.compareSync(password, this.password);
-        //         }
-        //
-        //     }
-        // },
 
         {
 
@@ -58,6 +47,7 @@ module.exports = function(sequelize, DataTypes) {
                     // Associating Account  with profile
                     // When an Account is deleted, also delete any associated profile
                     Account.hasOne(models.Profile, {
+                        foreignKey: "AccountId",
                         onDelete: "cascade"
                     });
 
@@ -69,28 +59,10 @@ module.exports = function(sequelize, DataTypes) {
                     var isvalid = storedPassword ? bcrypt.compareSync(password,storedPassword) : false;
                     return isvalid;
                 }
-            }
+            },
+            underscored: true,
         });
 
 
     return Account;
 };
-
-// this is to verify the email. i believe it will go on our Account.js
-// exports.create = function (req, res) {
-//  var allowedKeys = ['email', 'other_field'];
-// var attributes = _.pick(req.body, allowedKeys);
-// User.create(attributes)
-//   .then(function (user) {
-//     res.json(user);
-// })
-// .catch(Sequelize.ValidationError, function (err) {
-// respond with validation errors
-//  return res.status(422).send(err.errors);
-// })
-// .catch(function (err) {
-// every other error
-//   return res.status(400).send({
-//     message: err.message
-// });
-// });

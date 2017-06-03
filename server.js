@@ -38,12 +38,8 @@ app.set("view engine", "handlebars");
 require("./routes/public/account-api.js")(app);
 require("./routes/private/profile-api.js")(app);
 require("./routes/private/survey-api.js")(app);
-//require("./controller/profile.js")(app)
 
 
-
-db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log(`App running on port: ${PORT}`);
   });
-});

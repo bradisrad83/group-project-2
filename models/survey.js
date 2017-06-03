@@ -12,10 +12,12 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           Surveys.hasMany(models.surveyQuestions, {
+            foreignKey: 'SurveyId',
             onDelete: "cascade"
           });
         }
-      }
+      },
+      underscored: true,
     });
     return Surveys;
 };

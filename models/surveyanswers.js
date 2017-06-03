@@ -14,12 +14,13 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         surveyAnswers.belongsTo(models.surveyQuestions, {
-          foreignKey: {
+          foreignKey: 'SurveyQuestionId',
             allowNull: true
-          }
+
         });
       }
-    }
+    },
+    underscored: true,
   });
   return surveyAnswers;
 };

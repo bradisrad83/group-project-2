@@ -8,15 +8,17 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         surveyQuestions.hasMany(models.surveyAnswers, {
+          foreignKey: 'SurveyQuestionId',
           onDelete: "cascade"
         });
         surveyQuestions.belongsTo(models.Surveys, {
-          foreignKey: {
+          foreignKey: 'SurveyId',
             allowNull: false
-          }
+
         });
       }
-    }
+    },
+    underscored: true,
   });
   return surveyQuestions;
 };
