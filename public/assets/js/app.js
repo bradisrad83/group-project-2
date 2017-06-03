@@ -51,7 +51,7 @@ $(document).ready(function () {
                     localStorage.setItem('token', token);
                     $('#registerForm')[0].reset();
 
-                    debugger;
+                    //debugger;
                     location.href = "/dashboard";
                 },
                 error: function (error) {

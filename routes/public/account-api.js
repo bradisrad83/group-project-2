@@ -17,16 +17,6 @@ module.exports = function(app) {
     console.log(Username);
     console.log(Password);
 
-    // db.Account.findOne({
-    //   where: {
-    //     username: Username
-    //   }
-    // }).then(function(user) {
-    //   if (!user || !db.Account.validPassword(Password, user.password)) {
-    //     res.status(401).json({
-    //       message: 'Incorrect username or password'
-    //     })
-    //   } else {
     db.Account.findOne({
       where: {
         username: Username
@@ -38,23 +28,6 @@ module.exports = function(app) {
         });
       } else {
 
-        //             var token = jwt.sign({
-        //                 data: {
-        //                     uid: user.id
-        //                 }
-        //             }, 'secret', {
-        //                 expiresIn: '12h'
-        //             });
-        //             // Console log the token
-        //             console.log("Token: " + token);
-        //             res.status(200).json({ message: 'Successfully authenticated.', "token": token });
-        //         }
-        //     }).catch(function (error) {
-        //         console.log(error);
-        //         res.status(500).json({ message: 'Internal server error' });
-        //     });
-        // });
-
         var token = jwt.sign({
           data: {
             uid: user.id
@@ -63,8 +36,6 @@ module.exports = function(app) {
           expiresIn: '12h'
         });
         res.set("Set-Cookie", `token=${token}`);
-        // Console log the token
-        //console.log("Token: " + token);
         res.status(200).json({
           message: 'Successfully authenticated.',
           "token": token
@@ -111,5 +82,15 @@ module.exports = function(app) {
   app.get('/profile', function(req, res) {
     res.render('profile');
   });
+
+  app.get("/matches", function(req, res) {
+  db.Profile.findAll().then(function(dbProfiles) {
+    var profileObj = {
+      profiles: dbProfiles
+    };
+    res.render("matches", profileObj);
+  });
+
+});
 
 };

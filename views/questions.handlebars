@@ -52,6 +52,7 @@ $("#surveySubmit").on("click", function(){
          },
          success: function(res){
            console.log(res);
+           window.location.href = "/dashboard";
          },
          error: function(err){
            console.log(err);
