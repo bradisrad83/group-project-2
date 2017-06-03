@@ -203,3 +203,21 @@ body {
   margin: 1em 0 1em 20%;
   font-size: 250%;
 }
+
+/*
+    ------------------------------
+    ----- 4. Matches styles-------
+    ------------------------------
+*/
+
+.grey {
+  background-color: #e7e7e7;
+}
+
+.profileBlock {
+  margin-bottom: 10px;
+}
+
+.profHeading {
+  color: #ea8737;
+}

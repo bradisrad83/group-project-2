@@ -7,16 +7,49 @@
     {{#each profiles}}
       <div id="{{id}}">
 
-        <div class="row">
+        <div class="row profileBlock">
+
           <div class="col-md-4">
             <img src="{{imgLink}}" class="img-responsive">
           </div>
+          <div class="profWrapper">
           <div class="col-md-6">
-            <h3>Name: {{firstName}} {{lastName}}</h3>
-            <h4>State: {{location}}</h4>
-            <h4>Zipcode: {{zipCode}}</h4>
-            <p>Bio: {{bio}}</p>
-          </div> <!--/column-->
+            <div class="row">
+              <div class="col-md-4 grey">
+                <h2 class="profHeading">Name: </h2>
+              </div>
+              <div class="col-md-8">
+                <h2>{{firstName}} {{lastName}}</h2>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <h2 class="profHeading">State: </h2>
+              </div>
+              <div class="col-md-8 grey">
+                <h2>{{location}}</h2>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 grey">
+                 <h2 class="profHeading">Zipcode: </h2>
+              </div>
+              <div class="col-md-8">
+                <h2>{{zipCode}}</h2>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <h2 class="profHeading">Bio: </h2>
+              </div>
+              <div class="col-md-8 grey">
+                <h2>{{bio}}</h2>
+              </div>
+            </div>
+          </div><!--/wrapper-->
         </div> <!--/row-->
       </div><!--/id-->
     {{/each}}
