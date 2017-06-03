@@ -2,11 +2,6 @@
  * Created by admin on 6/1/17.
  */
 
-
-'use strict';
-
-var Questions = require('../models')['Questions'];
-
 module.exports = {
     up: function (queryInterface, Sequelize) {
         return queryInterface.createTable('surveyAnswers', {

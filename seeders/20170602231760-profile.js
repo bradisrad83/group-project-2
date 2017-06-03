@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
@@ -142,7 +142,7 @@ module.exports = {
           location: "Florida",
           zipCode: 33896,
           bio: "add dummy bio",
-          imgLink: "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/jess.jpg",
+          imgLink: "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/Jess.jpg",
           created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
           updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
           AccountId: 12
@@ -226,7 +226,7 @@ module.exports = {
           location: "Florida",
           zipCode: 32807,
           bio: "add dummy bio",
-          imgLink: "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/lu.jpg",
+          imgLink: "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/Lu.jpg",
           created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
           updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
           AccountId: 19
@@ -346,7 +346,7 @@ module.exports = {
           location: "Florida",
           zipCode: 32801,
           bio: "add dummy bio",
-          imgLink: "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/rob.jpg",
+          imgLink: "https://s3.amazonaws.com/job-ucf-code-bootcamp/matchstick/profile_img/Rob.jpg",
           created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
           updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
           AccountId: 29
